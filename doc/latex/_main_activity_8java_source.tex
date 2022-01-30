@@ -1,0 +1,377 @@
+\hypertarget{_main_activity_8java_source}{}\subsection{Main\+Activity.\+java}
+\label{_main_activity_8java_source}\index{Main\+Activity.\+java@{Main\+Activity.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.lasalle.io\_trucks;
+00002 
+00003 \textcolor{keyword}{import} androidx.appcompat.app.AlertDialog;
+00004 \textcolor{keyword}{import} androidx.appcompat.app.AppCompatActivity;
+00005 
+00006 \textcolor{keyword}{import} android.bluetooth.BluetoothAdapter;
+00007 \textcolor{keyword}{import} android.bluetooth.BluetoothDevice;
+00008 \textcolor{keyword}{import} android.content.DialogInterface;
+00009 \textcolor{keyword}{import} android.content.IntentFilter;
+00010 \textcolor{keyword}{import} android.os.Bundle;
+00011 \textcolor{keyword}{import} android.os.Handler;
+00012 \textcolor{keyword}{import} android.os.Message;
+00013 \textcolor{keyword}{import} android.util.Log;
+00014 \textcolor{keyword}{import} android.view.View;
+00015 \textcolor{keyword}{import} android.widget.Button;
+00016 \textcolor{keyword}{import} android.widget.ImageButton;
+00017 \textcolor{keyword}{import} android.widget.ImageView;
+00018 \textcolor{keyword}{import} android.widget.TextView;
+00019 
+\Hypertarget{_main_activity_8java_source_l00031}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{00031} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{MainActivity} \textcolor{keyword}{extends} AppCompatActivity implements View.OnClickListener
+00032 \{
+\Hypertarget{_main_activity_8java_source_l00036}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{00036}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG} = \textcolor{stringliteral}{"IHMMainActivity"};
+\Hypertarget{_main_activity_8java_source_l00040}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{00040}     \textcolor{keyword}{private} Boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etatTriangle} = \textcolor{keyword}{false};
+\Hypertarget{_main_activity_8java_source_l00041}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{00041}     \textcolor{keyword}{private} Boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etatGyrophare} = \textcolor{keyword}{false};
+\Hypertarget{_main_activity_8java_source_l00042}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{00042}     \textcolor{keyword}{private} Boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etatEclairage} = \textcolor{keyword}{false};
+\Hypertarget{_main_activity_8java_source_l00043}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{00043}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth};
+\Hypertarget{_main_activity_8java_source_l00044}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}{00044}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}{buttonRechercher};
+\Hypertarget{_main_activity_8java_source_l00045}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{00045}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{buttonRafraichir};
+\Hypertarget{_main_activity_8java_source_l00046}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{00046}     \textcolor{keyword}{private} ImageButton \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle};
+\Hypertarget{_main_activity_8java_source_l00047}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{00047}     \textcolor{keyword}{private} ImageButton \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare};
+\Hypertarget{_main_activity_8java_source_l00048}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{00048}     \textcolor{keyword}{private} ImageButton \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage};
+\Hypertarget{_main_activity_8java_source_l00049}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{00049}     \textcolor{keyword}{private} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communicationBluetooth} = \textcolor{keyword}{new} 
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication}();
+\Hypertarget{_main_activity_8java_source_l00050}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{00050}     \textcolor{keyword}{private} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth} = null;
+\Hypertarget{_main_activity_8java_source_l00051}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}{00051}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}{imageEtatConnection};
+\Hypertarget{_main_activity_8java_source_l00052}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}{00052}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}{textEtatConnection};
+00053 
+00058     @Override
+\Hypertarget{_main_activity_8java_source_l00059}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}{00059}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}{onCreate}(Bundle savedInstanceState)
+00060     \{
+00061         super.onCreate(savedInstanceState);
+00062         setContentView(R.layout.activity\_main);
+00063         Log.i(TAG,\textcolor{stringliteral}{"onCreate()"});
+00064 
+00065         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}{recupererWidgets}();
+00066         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}{initialiserWidgets}();
+00067 
+00068         communicationBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}{demanderActivationBluetooth}(\textcolor{keyword}{this});
+00069     \}
+00070 
+00074     @Override
+\Hypertarget{_main_activity_8java_source_l00075}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}{00075}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}{onStart}()
+00076     \{
+00077         super.onStart();
+00078         Log.i(TAG,\textcolor{stringliteral}{"onStart()"});
+00079     \}
+00080 
+00084     @Override
+\Hypertarget{_main_activity_8java_source_l00085}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}{00085}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}{onResume}()
+00086     \{
+00087         super.onResume();
+00088         Log.i(TAG,\textcolor{stringliteral}{"onResume()"});
+00089         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}{creerLiasonReceiverEtatBluetooth}();
+00090     \}
+00091 
+00095     @Override
+\Hypertarget{_main_activity_8java_source_l00096}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}{00096}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}{onPause}()
+00097     \{
+00098         super.onPause();
+00099         Log.i(TAG,\textcolor{stringliteral}{"onPause()"});
+00100         communicationBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}{unregisterBluetooth}(\textcolor{keyword}{this});
+00101     \}
+00102 
+00106     @Override
+\Hypertarget{_main_activity_8java_source_l00107}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{00107}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{onStop}()
+00108     \{
+00109         super.onStop();
+00110         Log.i(TAG,\textcolor{stringliteral}{"onStop()"});
+00111 
+00112     \}
+00113 
+00117     @Override
+\Hypertarget{_main_activity_8java_source_l00118}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a41e9b1eab2362456217786165b87d25e}{00118}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a41e9b1eab2362456217786165b87d25e}{onDestroy}()
+00119     \{
+00120         super.onDestroy();
+00121         Log.i(TAG,\textcolor{stringliteral}{"onDestroy()"});
+00122 
+00123     \}
+00124 
+00130     @Override
+\Hypertarget{_main_activity_8java_source_l00131}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}{00131}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}{onClick}(View element)
+00132     \{
+00133         \textcolor{keywordflow}{if}(element == buttonBluetooth)
+00134         \{
+00135             \textcolor{keywordflow}{if}(buttonBluetooth.getText().equals(\textcolor{stringliteral}{"Connecter"}))
+00136             \{
+00137                 BluetoothDevice blueDevice = communicationBluetooth.
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}{recupererAppareilBluetooth}(\textcolor{stringliteral}{"io-trucks"});
+00138                 \textcolor{keywordflow}{if}(blueDevice == null)
+00139                 \{
+00140                     AlertDialog.Builder boiteAvertissementNonTrouver = \textcolor{keyword}{new} AlertDialog.Builder(\textcolor{keyword}{this});
+00141                     boiteAvertissementNonTrouver.setMessage(\textcolor{stringliteral}{"L'appareil io-trucks n'as pas été trouvé.
+       Vérifiez si celui a été appairé correctement."});
+00142                     boiteAvertissementNonTrouver.setPositiveButton(\textcolor{stringliteral}{"Continuer"}, \textcolor{keyword}{new} DialogInterface.
+      OnClickListener() \{
+00143                         @Override
+00144                         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}{onClick}(DialogInterface dialog, \textcolor{keywordtype}{int} which) \{
+00145                         \}
+00146                     \});
+00147                     boiteAvertissementNonTrouver.show();
+00148                     Log.i(TAG, \textcolor{stringliteral}{"Appareil io-trucks non trouvé !"});
+00149                     \textcolor{keywordflow}{return};
+00150                 \}
+00151                 \textcolor{keywordflow}{else}
+00152                 \{
+00153                     \textcolor{keywordflow}{if}(peripheriqueBluetooth == null)
+00154                     \{
+00155                         Log.i(TAG, \textcolor{stringliteral}{"Instancie peripheriqueBluetooth"});
+00156                         peripheriqueBluetooth = \textcolor{keyword}{new} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique}(blueDevice, 
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}{handler});
+00157                     \}
+00158                     \textcolor{keywordflow}{if}(!peripheriqueBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}())
+00159                     \{
+00160                         Log.i(TAG, \textcolor{stringliteral}{"Connexion peripheriqueBluetooth"});
+00161                         peripheriqueBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ab2c35019f3ba71ec1b3b59470dc383ae}{connecter}();
+00162                     \}
+00163                     \textcolor{keywordflow}{else} \textcolor{comment}{// déjà connecté !}
+00164                     \{
+00165                     \}
+00166                 \}
+00167             \}
+00168             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(buttonBluetooth.getText().equals(\textcolor{stringliteral}{"Déconnecter"}))
+00169             \{
+00170                 \textcolor{keywordflow}{if} (peripheriqueBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}())
+00171                 \{
+00172                     peripheriqueBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afe5345d0dc31b1af1b311278241e228d}{deconnecter}();
+00173                 \}
+00174             \}
+00175         \}
+00176         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == buttonRechercher)
+00177         \{
+00178             communicationBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}{rechercherAppareilConnu}(\textcolor{keyword}{this});
+00179         \}
+00180         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == imageButtonTriangle)
+00181         \{
+00182             Log.i(TAG,\textcolor{stringliteral}{"button Triangle"});
+00183             \textcolor{keywordflow}{if}(!etatTriangle)
+00184             \{
+00185                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;T;1\(\backslash\)r\(\backslash\)n"});
+00186                 imageButtonTriangle.setImageResource(R.drawable.triangle);
+00187                 etatTriangle = \textcolor{keyword}{true};
+00188             \}
+00189             \textcolor{keywordflow}{else}
+00190             \{
+00191                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;T;0\(\backslash\)r\(\backslash\)n"});
+00192                 imageButtonTriangle.setImageResource(R.drawable.triangle\_b\_w);
+00193                 etatTriangle = \textcolor{keyword}{false};
+00194             \}
+00195         \}
+00196         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == imageButtonGyrophare)
+00197         \{
+00198             Log.i(TAG,\textcolor{stringliteral}{"button Gyrophare"});
+00199             \textcolor{keywordflow}{if}(!etatGyrophare)
+00200             \{
+00201                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;G;1\(\backslash\)r\(\backslash\)n"});
+00202                 imageButtonGyrophare.setImageResource(R.drawable.flash);
+00203                 etatGyrophare = \textcolor{keyword}{true};
+00204             \}
+00205             \textcolor{keywordflow}{else}
+00206             \{
+00207                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;G;0\(\backslash\)r\(\backslash\)n"});
+00208                 imageButtonGyrophare.setImageResource(R.drawable.flash\_b\_w);
+00209                 etatGyrophare = \textcolor{keyword}{false};
+00210             \}
+00211         \}
+00212         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == imageButtonEclairage)
+00213         \{
+00214             Log.i(TAG,\textcolor{stringliteral}{"button Eclairage"});
+00215             \textcolor{keywordflow}{if}(!etatEclairage)
+00216             \{
+00217                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;E;1\(\backslash\)r\(\backslash\)n"});
+00218                 imageButtonEclairage.setImageResource(R.drawable.spotlight);
+00219                 etatEclairage = \textcolor{keyword}{true};
+00220             \}
+00221             \textcolor{keywordflow}{else}
+00222             \{
+00223                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;E;0\(\backslash\)r\(\backslash\)n"});
+00224                 imageButtonEclairage.setImageResource(R.drawable.spotlight\_b\_w);
+00225                 etatEclairage = \textcolor{keyword}{false};
+00226             \}
+00227         \}
+00228         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == buttonRafraichir)
+00229         \{
+00230             Log.i(TAG,\textcolor{stringliteral}{"button Rafraichir"});
+00231             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{demanderEtats}();
+00232         \}
+00233         \textcolor{keywordflow}{else}
+00234         \{
+00235             Log.i(TAG,\textcolor{stringliteral}{"button Inconnu : "} + element.getId());
+00236         \}
+00237     \}
+00238 
+\Hypertarget{_main_activity_8java_source_l00242}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{00242}         \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(String trame)
+00243     \{
+00244         \textcolor{keywordflow}{if}(peripheriqueBluetooth != null)
+00245         \{
+00246             \textcolor{keywordflow}{if} (peripheriqueBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}())
+00247             \{
+00248                 Log.i(TAG, \textcolor{stringliteral}{"envoyerTrame() trame : "} + trame);
+00249                 peripheriqueBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a7f691381f5164b92f8ff3f06561db656}{envoyer}(trame);
+00250             \}
+00251         \}
+00252     \}
+00253 
+\Hypertarget{_main_activity_8java_source_l00257}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}{00257}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}{recupererWidgets}()
+00258     \{
+00259         buttonBluetooth = findViewById(R.id.buttonConnecter);
+00260         buttonRechercher = findViewById(R.id.buttonBounded);
+00261         buttonRafraichir = findViewById(R.id.buttonRafraichir);
+00262         imageButtonTriangle = findViewById(R.id.imageButtonTriangle);
+00263         imageButtonGyrophare = findViewById(R.id.imageButtonGyrophares);
+00264         imageButtonEclairage = findViewById(R.id.imageButtonEclairage);
+00265         imageEtatConnection = findViewById(R.id.imageViewEtatConnection);
+00266         textEtatConnection = findViewById(R.id.textViewEtatConnection);
+00267     \}
+00268 
+\Hypertarget{_main_activity_8java_source_l00272}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}{00272}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}{initialiserWidgets}()
+00273     \{
+00274         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{renitialiserVue}();
+00275 
+00276         buttonBluetooth.setOnClickListener(\textcolor{keyword}{this});
+00277         buttonRechercher.setOnClickListener(\textcolor{keyword}{this});
+00278         buttonRafraichir.setOnClickListener(\textcolor{keyword}{this});
+00279         imageButtonTriangle.setOnClickListener(\textcolor{keyword}{this});
+00280         imageButtonGyrophare.setOnClickListener(\textcolor{keyword}{this});
+00281         imageButtonEclairage.setOnClickListener(\textcolor{keyword}{this});
+00282     \}
+00283 
+\Hypertarget{_main_activity_8java_source_l00287}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}{00287}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}{creerLiasonReceiverEtatBluetooth}()
+00288     \{
+00289         IntentFilter filter = \textcolor{keyword}{new} IntentFilter(BluetoothAdapter.ACTION\_STATE\_CHANGED);
+00290         registerReceiver(communicationBluetooth.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}{ecouterEtatBluetooth}(), filter);
+00291     \}
+00292 
+\Hypertarget{_main_activity_8java_source_l00293}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}{00293}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}{activerVue}()
+00294     \{
+00295         buttonBluetooth.setText(\textcolor{stringliteral}{"Déconnecter"});
+00296         buttonRafraichir.setEnabled(\textcolor{keyword}{true});
+00297         imageButtonTriangle.setEnabled(\textcolor{keyword}{true});
+00298         imageButtonGyrophare.setEnabled(\textcolor{keyword}{true});
+00299         imageButtonEclairage.setEnabled(\textcolor{keyword}{true});
+00300         imageEtatConnection.setImageResource(R.drawable.green\_cricle);
+00301         textEtatConnection.setText(\textcolor{stringliteral}{"Connecter"});
+00302     \}
+00303 
+\Hypertarget{_main_activity_8java_source_l00307}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{00307}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{renitialiserVue}()
+00308     \{
+00309         buttonBluetooth.setText(\textcolor{stringliteral}{"Connecter"});
+00310         buttonRafraichir.setEnabled(\textcolor{keyword}{false});
+00311         imageButtonTriangle.setEnabled(\textcolor{keyword}{false});
+00312         imageButtonGyrophare.setEnabled(\textcolor{keyword}{false});
+00313         imageButtonEclairage.setEnabled(\textcolor{keyword}{false});
+00314         imageButtonTriangle.setImageResource(R.drawable.triangle\_b\_w);
+00315         imageButtonEclairage.setImageResource(R.drawable.spotlight\_b\_w);
+00316         imageButtonGyrophare.setImageResource(R.drawable.flash\_b\_w);
+00317         imageEtatConnection.setImageResource(R.drawable.red\_circle);
+00318         textEtatConnection.setText(\textcolor{stringliteral}{"Déconnecter"});
+00319     \}
+00320 
+\Hypertarget{_main_activity_8java_source_l00325}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}{00325}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}{decoderTrame}(String trame)
+00326     \{
+00327         String nouvelleTrame = \textcolor{stringliteral}{""};
+00328         \textcolor{comment}{// Exemple : trame = "$iotruck;S1;0;0;0\(\backslash\)r\(\backslash\)n"}
+00329         nouvelleTrame = trame.replace(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_abcbb6acc50e8fad665dcd3024f0b863e}{EN\_TETE},\textcolor{stringliteral}{""}); \textcolor{comment}{// enlever aussi le ; ?}
+00330         \textcolor{comment}{// Exemple : nouvelleTrame = ";S1;0;0;0\(\backslash\)r\(\backslash\)n"}
+00331         nouvelleTrame.replace(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_a9e29c399724eb61c15a11837664369cc}{DELIMITEUR\_FIN},\textcolor{stringliteral}{""});
+00332         \textcolor{comment}{// Exemple : nouvelleTrame = ";S1;0;0;0"}
+00333         String[] trameCouper = nouvelleTrame.split(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_a42598075ccfbcb17730a426048e8bfcf}{DELIMITEUR\_CHAMP});
+00334         \textcolor{comment}{// Exemple : trameCouper = [0];[1];[2];[3];[4]}
+00335         Log.v(TAG, \textcolor{stringliteral}{"decoderTrame() découpage de la trame"});
+00336         \textcolor{comment}{// le premier champ est vide}
+00337         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < trameCouper.length; i++)
+00338         \{
+00339             Log.v(TAG, \textcolor{stringliteral}{"decoderTrame() champ "} + i + \textcolor{stringliteral}{" = "} + trameCouper[i]);
+00340         \}
+00341         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}{traiterTrame}(trameCouper);
+00342     \}
+00343 
+\Hypertarget{_main_activity_8java_source_l00348}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}{00348}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}{traiterTrame}(String[] trame)
+00349     \{
+00350         Log.v(TAG, \textcolor{stringliteral}{"traiterTrame() trame[1] = "} + trame[1] + \textcolor{stringliteral}{" (type)"});
+00351         \textcolor{keywordflow}{if}(trame[1].equals(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_a84b2f823d7e9cf9b1e7ab1cc4de3ea65}{TRAME\_REQUETE\_STATE1}))
+00352         \{
+00353             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}{afficherEtatS1}(trame);
+00354         \}
+00358     \}
+00359 
+\Hypertarget{_main_activity_8java_source_l00360}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}{00360}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}{afficherEtatS1}(String[] trame)
+00361     \{
+00362         Log.v(TAG, \textcolor{stringliteral}{"traiterTrame() trame[2] = "} + trame[2] + \textcolor{stringliteral}{" (triangle)"});
+00363         \textcolor{keywordflow}{if}(trame[2].equals(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_aca580f756cf43aa0010a016f56ff5c5d}{LEVE}))
+00364         \{
+00365             imageButtonTriangle.setImageResource(R.drawable.triangle);
+00366             etatTriangle = \textcolor{keyword}{true};
+00367         \}
+00368         \textcolor{keywordflow}{else}
+00369         \{
+00370             imageButtonTriangle.setImageResource(R.drawable.triangle\_b\_w);
+00371             etatTriangle = \textcolor{keyword}{false};
+00372         \}
+00373 
+00374         Log.v(TAG, \textcolor{stringliteral}{"traiterTrame() trame[3] = "} + trame[3] + \textcolor{stringliteral}{" (gyrophare)"});
+00375         \textcolor{keywordflow}{if}(trame[3].equals(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_abe095f5652f01c6e6ebdbca02096067a}{ON}))
+00376         \{
+00377             imageButtonGyrophare.setImageResource(R.drawable.flash);
+00378             etatGyrophare = \textcolor{keyword}{true};
+00379         \}
+00380         \textcolor{keywordflow}{else}
+00381         \{
+00382             imageButtonGyrophare.setImageResource(R.drawable.flash\_b\_w);
+00383             etatGyrophare = \textcolor{keyword}{false};
+00384         \}
+00385 
+00386         Log.v(TAG, \textcolor{stringliteral}{"traiterTrame() trame[4] = "} + trame[4] + \textcolor{stringliteral}{" (éclairage)"});
+00387         \textcolor{keywordflow}{if}(trame[4].equals(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole}{Protocole}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_protocole_abe095f5652f01c6e6ebdbca02096067a}{ON}))
+00388         \{
+00389             imageButtonEclairage.setImageResource(R.drawable.spotlight);
+00390             etatEclairage = \textcolor{keyword}{true};
+00391         \}
+00392         \textcolor{keywordflow}{else}
+00393         \{
+00394             imageButtonEclairage.setImageResource(R.drawable.spotlight\_b\_w);
+00395             etatEclairage = \textcolor{keyword}{false};
+00396         \}
+00397     \}
+00398 
+\Hypertarget{_main_activity_8java_source_l00403}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}{00403}     \textcolor{keyword}{final} \textcolor{keyword}{private} Handler \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}{handler} = \textcolor{keyword}{new} Handler()
+00404     \{
+00405         @Override
+00406         \textcolor{keyword}{public} \textcolor{keywordtype}{void} handleMessage(Message msg)
+00407         \{
+00408             super.handleMessage(msg);
+00409 
+00410             \textcolor{keywordflow}{switch}(msg.what)
+00411             \{
+00412                 \textcolor{keywordflow}{case} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a46ce17bdb3396e4aee94ea06a0bd8556}{CODE\_CONNEXION}:
+00413                     Log.v(TAG, \textcolor{stringliteral}{"handleMessage() io-trucks connecté"});
+00414                     \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}{activerVue}();
+00415                     \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{demanderEtats}();
+00416                     \textcolor{keywordflow}{break};
+00417                 \textcolor{keywordflow}{case} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2abb4880d1dd4140379b3ff71cff8cf3}{CODE\_RECEPTION}:
+00418                     Log.v(TAG, \textcolor{stringliteral}{"handleMessage() io-trucks réception : "} + (String)msg.obj);
+00419                     \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}{decoderTrame}((String)msg.obj);
+00420                     \textcolor{keywordflow}{break};
+00421                 \textcolor{keywordflow}{case} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aad9e383353fd86265a2eeeac2d2c901f}{CODE\_EMISSION}:
+00422                     Log.v(TAG, \textcolor{stringliteral}{"handleMessage() io-trucks émission : "} + (String)msg.obj);
+00426                     \textcolor{keywordflow}{break};
+00427                 \textcolor{keywordflow}{case} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a44d0841cdcad04f7d112cb30d12a60f0}{CODE\_DECONNEXION}:
+00428                     Log.v(TAG, \textcolor{stringliteral}{"handleMessage() io-trucks déconnecté"});
+00429                     \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{renitialiserVue}();
+00430                     \textcolor{keywordflow}{break};
+00431             \}
+00432         \}
+00433     \};
+00434 
+\Hypertarget{_main_activity_8java_source_l00438}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{00438}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{demanderEtats}()
+00439     \{
+00440         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;S1\(\backslash\)r\(\backslash\)n"});
+00441         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;S2\(\backslash\)r\(\backslash\)n"});
+00442     \}
+00443 \}
+\end{DoxyCode}

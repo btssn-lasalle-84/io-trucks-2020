@@ -1,0 +1,339 @@
+\hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{}\subsection{Référence de la classe com.\+lasalle.\+io\+\_\+trucks.\+Communication}
+\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication}\index{com.\+lasalle.\+io\+\_\+trucks.\+Communication@{com.\+lasalle.\+io\+\_\+trucks.\+Communication}}
+
+
+Classe de \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication} et de connexion bluetooth.  
+
+
+
+
+Graphe de collaboration de com.\+lasalle.\+io\+\_\+trucks.\+Communication\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classcom_1_1lasalle_1_1io__trucks_1_1_communication__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}{demander\+Activation\+Bluetooth} (Context context\+Acceuil)
+\begin{DoxyCompactList}\small\item\em Vérifie si le bluetooth est disponible et activé, sinon demande l\textquotesingle{}autorisation de l\textquotesingle{}activé \end{DoxyCompactList}\item 
+Broadcast\+Receiver \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}{ecouter\+Etat\+Bluetooth} ()
+\begin{DoxyCompactList}\small\item\em Vérifie les modification d\textquotesingle{}état du bluetooth. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}{rechercher\+Appareil\+Connu} (Context context\+Acceuil)
+\begin{DoxyCompactList}\small\item\em Méthode de recherche des appareils qui ont déjà était appairer. \end{DoxyCompactList}\item 
+Bluetooth\+Device \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}{recuperer\+Appareil\+Bluetooth} (String nom\+Appareil)
+\begin{DoxyCompactList}\small\item\em Méthode qui retourne l\textquotesingle{}appareil Bluetooth io-\/trucks. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}{unregister\+Bluetooth} (Context context\+Acceuil)
+\begin{DoxyCompactList}\small\item\em Méthode pour unregister les receiver à la destruction de l\textquotesingle{}application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Bluetooth\+Adapter \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetooth\+Adapter} = Bluetooth\+Adapter.\+get\+Default\+Adapter()
+\item 
+Set$<$ Bluetooth\+Device $>$ \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{liste\+Appareil\+Connus}
+\item 
+Broadcast\+Receiver \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{receiver\+Etat\+Bluetooth}
+\item 
+Broadcast\+Receiver \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aa226d389c696b51929ee0b62cfd04710}{receiver\+Scan}
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{T\+AG} = \char`\"{}Communication\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Classe de \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication} et de connexion bluetooth. 
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00025}{25} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!demander\+Activation\+Bluetooth@{demander\+Activation\+Bluetooth}}
+\index{demander\+Activation\+Bluetooth@{demander\+Activation\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{demander\+Activation\+Bluetooth()}{demanderActivationBluetooth()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+demander\+Activation\+Bluetooth (\begin{DoxyParamCaption}\item[{Context}]{context\+Acceuil }\end{DoxyParamCaption})}
+
+
+
+Vérifie si le bluetooth est disponible et activé, sinon demande l\textquotesingle{}autorisation de l\textquotesingle{}activé 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em context\+Acceuil} & contexte de l\textquotesingle{}acceuil \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00043}{43} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00059}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00044     \{
+00045         \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetoothAdapter} == null)
+00046         \{
+00047             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"demanderActivationBluetooth() bluetoothAdapter = null"});
+00048             Toast.makeText(contextAcceuil, R.string.str\_bluetoot\_inexistant, Toast.LENGTH\_SHORT).show();
+00049         \}
+00050         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetoothAdapter}.isEnabled())
+00051         \{
+00052             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"demanderActivationBluetooth() bluetooth désactivé"});
+00053             Toast.makeText(contextAcceuil, R.string.str\_bluetooth\_eteint, Toast.LENGTH\_SHORT).show();
+00054             Intent enableBtIntent = \textcolor{keyword}{new} Intent(BluetoothAdapter.ACTION\_REQUEST\_ENABLE);
+00055             ((Activity) contextAcceuil).startActivityForResult(enableBtIntent,1);
+00056         \}
+00057         \textcolor{keywordflow}{else}
+00058         \{
+00059             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"demanderActivationBluetooth() bluetooth activé"});
+00060             Toast.makeText(contextAcceuil, R.string.str\_bluetooth\_allumer, Toast.LENGTH\_SHORT).show();
+00061         \}
+00062     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!ecouter\+Etat\+Bluetooth@{ecouter\+Etat\+Bluetooth}}
+\index{ecouter\+Etat\+Bluetooth@{ecouter\+Etat\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{ecouter\+Etat\+Bluetooth()}{ecouterEtatBluetooth()}}
+{\footnotesize\ttfamily Broadcast\+Receiver com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+ecouter\+Etat\+Bluetooth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Vérifie les modification d\textquotesingle{}état du bluetooth. 
+
+\begin{DoxyReturn}{Renvoie}
+renvoie le Receiver de l\textquotesingle{}état du bluetooth 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00068}{68} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+Références \hyperlink{_communication_8java_source_l00034}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+receiver\+Etat\+Bluetooth}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00287}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+creer\+Liason\+Receiver\+Etat\+Bluetooth()}.
+
+
+\begin{DoxyCode}
+00069     \{
+00070         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{receiverEtatBluetooth} = \textcolor{keyword}{new} BroadcastReceiver()
+00071         \{
+00072             @Override
+00073             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onReceive(Context context, Intent intent)
+00074             \{
+00075                 \textcolor{keyword}{final} String action = intent.getAction();
+00076                 Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"onReceive() "} + action);
+00077                 \textcolor{keywordflow}{if} (action.equals(BluetoothAdapter.ACTION\_STATE\_CHANGED))
+00078                 \{
+00079                     \textcolor{keyword}{final} \textcolor{keywordtype}{int} state = intent.getIntExtra(BluetoothAdapter.EXTRA\_STATE, BluetoothAdapter.
+      ERROR);
+00080                     \textcolor{keywordflow}{switch} (state)
+00081                     \{
+00082                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_OFF:
+00083                             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"onReceive() Bluetooth désactivé !"});
+00084                             Toast.makeText(context, R.string.str\_bluetooth\_eteint, Toast.LENGTH\_SHORT).show
+      ();
+00085                             \textcolor{keywordflow}{break};
+00086                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_TURNING\_OFF:
+00087                             Toast.makeText(context, R.string.str\_bluetooth\_eteint\_en\_cours, Toast.
+      LENGTH\_LONG).show();
+00088                             \textcolor{keywordflow}{break};
+00089                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_ON:
+00090                             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"onReceive() Bluetooth activé !"});
+00091                             Toast.makeText(context, R.string.str\_bluetooth\_allumer, Toast.LENGTH\_SHORT).
+      show();
+00092                             \textcolor{keywordflow}{break};
+00093                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_TURNING\_ON:
+00094                             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG},\textcolor{stringliteral}{"onReceive() Bluetooth s'active !"});
+00095                             Toast.makeText(context, R.string.str\_bluetooth\_allumer\_en\_cours, Toast.
+      LENGTH\_LONG).show();
+00096                             \textcolor{keywordflow}{break};
+00097                     \}
+00098                 \}
+00099             \}
+00100         \};
+00101 
+00102         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{receiverEtatBluetooth};
+00103     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!rechercher\+Appareil\+Connu@{rechercher\+Appareil\+Connu}}
+\index{rechercher\+Appareil\+Connu@{rechercher\+Appareil\+Connu}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{rechercher\+Appareil\+Connu()}{rechercherAppareilConnu()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+rechercher\+Appareil\+Connu (\begin{DoxyParamCaption}\item[{Context}]{context\+Acceuil }\end{DoxyParamCaption})}
+
+
+
+Méthode de recherche des appareils qui ont déjà était appairer. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em context\+Acceuil} & Contient le contexte de l\textquotesingle{}activité Acceuil \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00109}{109} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00131}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Click()}.
+
+
+\begin{DoxyCode}
+00110     \{
+00111         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{listeAppareilConnus} = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetoothAdapter}.getBondedDevices();
+00112         \textcolor{keywordflow}{for}(BluetoothDevice blueDevice : \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{listeAppareilConnus})
+00113         \{
+00114             Toast.makeText(contextAcceuil, \textcolor{stringliteral}{"Appareil "} + blueDevice.getName(), Toast.LENGTH\_SHORT).show();
+00115         \}
+00116     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!recuperer\+Appareil\+Bluetooth@{recuperer\+Appareil\+Bluetooth}}
+\index{recuperer\+Appareil\+Bluetooth@{recuperer\+Appareil\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{recuperer\+Appareil\+Bluetooth()}{recupererAppareilBluetooth()}}
+{\footnotesize\ttfamily Bluetooth\+Device com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+recuperer\+Appareil\+Bluetooth (\begin{DoxyParamCaption}\item[{String}]{nom\+Appareil }\end{DoxyParamCaption})}
+
+
+
+Méthode qui retourne l\textquotesingle{}appareil Bluetooth io-\/trucks. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom\+Appareil} & le nom de l\textquotesingle{}appareil Bluetooth io-\/trucks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Renvoie le device utilisé pour la communication 
+\end{DoxyReturn}
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00123}{123} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00131}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Click()}.
+
+
+\begin{DoxyCode}
+00124     \{
+00125         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{listeAppareilConnus} = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetoothAdapter}.getBondedDevices();
+00126         \textcolor{keywordflow}{for}(BluetoothDevice blueDevice : \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{listeAppareilConnus})
+00127         \{
+00128             \textcolor{keywordflow}{if}(blueDevice.getName().equals(nomAppareil))
+00129             \{
+00130                 Log.d(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{TAG}, \textcolor{stringliteral}{"recupererAppareilBluetooth() io-trucks trouvé : "} + blueDevice.getName() + \textcolor{stringliteral}{"
+       ("} + blueDevice.getAddress() + \textcolor{stringliteral}{")"});
+00131                 \textcolor{keywordflow}{return} blueDevice;
+00132             \}
+00133         \}
+00134         \textcolor{keywordflow}{return} null;
+00135     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!unregister\+Bluetooth@{unregister\+Bluetooth}}
+\index{unregister\+Bluetooth@{unregister\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{unregister\+Bluetooth()}{unregisterBluetooth()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+unregister\+Bluetooth (\begin{DoxyParamCaption}\item[{Context}]{context\+Acceuil }\end{DoxyParamCaption})}
+
+
+
+Méthode pour unregister les receiver à la destruction de l\textquotesingle{}application. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em context\+Acceuil} & contexte de l\textquotesingle{}acceuil \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00141}{141} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00096}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Pause()}.
+
+
+\begin{DoxyCode}
+00142     \{
+00143         \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetoothAdapter} != null)
+00144         \{
+00145             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{bluetoothAdapter}.cancelDiscovery();
+00146             contextAcceuil.unregisterReceiver(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{receiverEtatBluetooth});
+00147         \}
+00148     \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!bluetooth\+Adapter@{bluetooth\+Adapter}}
+\index{bluetooth\+Adapter@{bluetooth\+Adapter}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{bluetooth\+Adapter}{bluetoothAdapter}}
+{\footnotesize\ttfamily Bluetooth\+Adapter com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+bluetooth\+Adapter = Bluetooth\+Adapter.\+get\+Default\+Adapter()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00036}{36} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!liste\+Appareil\+Connus@{liste\+Appareil\+Connus}}
+\index{liste\+Appareil\+Connus@{liste\+Appareil\+Connus}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{liste\+Appareil\+Connus}{listeAppareilConnus}}
+{\footnotesize\ttfamily Set$<$Bluetooth\+Device$>$ com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+liste\+Appareil\+Connus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00037}{37} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!receiver\+Etat\+Bluetooth@{receiver\+Etat\+Bluetooth}}
+\index{receiver\+Etat\+Bluetooth@{receiver\+Etat\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{receiver\+Etat\+Bluetooth}{receiverEtatBluetooth}}
+{\footnotesize\ttfamily Broadcast\+Receiver com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+receiver\+Etat\+Bluetooth\hspace{0.3cm}{\ttfamily [private]}}
+
+Attributs 
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00034}{34} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+Référencé par \hyperlink{_communication_8java_source_l00068}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+ecouter\+Etat\+Bluetooth()}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aa226d389c696b51929ee0b62cfd04710}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aa226d389c696b51929ee0b62cfd04710}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!receiver\+Scan@{receiver\+Scan}}
+\index{receiver\+Scan@{receiver\+Scan}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{receiver\+Scan}{receiverScan}}
+{\footnotesize\ttfamily Broadcast\+Receiver com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+receiver\+Scan\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00035}{35} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}\label{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}!T\+AG@{T\+AG}}
+\index{T\+AG@{T\+AG}!com\+::lasalle\+::io\+\_\+trucks\+::\+Communication@{com\+::lasalle\+::io\+\_\+trucks\+::\+Communication}}
+\paragraph{\texorpdfstring{T\+AG}{TAG}}
+{\footnotesize\ttfamily final String com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+T\+AG = \char`\"{}Communication\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Constantes 
+
+Définition à la ligne \hyperlink{_communication_8java_source_l00030}{30} du fichier \hyperlink{_communication_8java_source}{Communication.\+java}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_communication_8java}{Communication.\+java}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\hypertarget{_accueil_8java_source}{}\subsection{Accueil.\+java}
+\label{_accueil_8java_source}\index{Accueil.\+java@{Accueil.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.lasalle.io\_trucks;
+00002 
+00003 \textcolor{keyword}{import} androidx.appcompat.app.AppCompatActivity;
+00004 
+00005 \textcolor{keyword}{import} android.content.Intent;
+00006 \textcolor{keyword}{import} android.os.Bundle;
+00007 \textcolor{keyword}{import} android.util.Log;
+00008 \textcolor{keyword}{import} android.view.animation.Animation;
+00009 \textcolor{keyword}{import} android.view.animation.AnimationUtils;
+00010 \textcolor{keyword}{import} android.widget.ImageView;
+00011 
+00012 \textcolor{keyword}{import} java.io.Serializable;
+00013 
+\Hypertarget{_accueil_8java_source_l00026}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{00026} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{Accueil} \textcolor{keyword}{extends} AppCompatActivity
+00027 \{
+\Hypertarget{_accueil_8java_source_l00031}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a1a3ee3728fab660903bb4399a2e49d49}{00031}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a1a3ee3728fab660903bb4399a2e49d49}{TAG} = \textcolor{stringliteral}{"IHMAccueil"};
+\Hypertarget{_accueil_8java_source_l00035}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{00035}     \textcolor{keyword}{private} Animation \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation};
+\Hypertarget{_accueil_8java_source_l00036}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}{00036}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}{imageView};
+00037 
+00042     @Override
+\Hypertarget{_accueil_8java_source_l00043}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_acd7cff413b44344de6b037c85f4f50bb}{00043}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_acd7cff413b44344de6b037c85f4f50bb}{onCreate}(Bundle savedInstanceState)
+00044     \{
+00045         super.onCreate(savedInstanceState);
+00046         setContentView(R.layout.activity\_accueil);
+00047         Log.i(TAG,\textcolor{stringliteral}{"onCreate()"});
+00048 
+00049         imageView = (ImageView)findViewById(R.id.imageView);
+00050         animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade\_in);
+00051         animation.setAnimationListener(\textcolor{keyword}{new} Animation.AnimationListener()
+00052         \{
+00058             @Override
+00059             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAnimationStart(Animation animation)
+00060             \{
+00061             \}
+00062 
+00069             @Override
+00070             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAnimationEnd(Animation animation)
+00071             \{
+00072                 \textcolor{comment}{// A la fin de l'animation, on lance l'activité principale}
+00073                 Intent intent = \textcolor{keyword}{new} Intent(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{Accueil}.this, \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{MainActivity}.class);
+00074                 startActivity(intent);
+00075             \}
+00076 
+00077             @Override
+00078             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAnimationRepeat(Animation animation)
+00079             \{
+00080             \}
+00081         \});
+00082         imageView.startAnimation(animation);
+00083     \}
+00084 \}
+\end{DoxyCode}

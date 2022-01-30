@@ -1,0 +1,6 @@
+<map id="com.lasalle.io_trucks.MainActivity" name="com.lasalle.io_trucks.MainActivity">
+<area shape="rect" id="node2" href="$classcom_1_1lasalle_1_1io__trucks_1_1_peripherique.html" title="Classe permettant de gérer les périphériques. " alt="" coords="5,331,227,716"/>
+<area shape="rect" id="node3" href="$class_thread.html" title="{Thread\n||}" alt="" coords="79,5,142,83"/>
+<area shape="rect" id="node4" href="$classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception.html" title="Déclaration de la classe TReception. " alt="" coords="131,132,357,268"/>
+<area shape="rect" id="node5" href="$classcom_1_1lasalle_1_1io__trucks_1_1_communication.html" title="Classe de Communication et de connexion bluetooth. " alt="" coords="251,426,491,621"/>
+</map>

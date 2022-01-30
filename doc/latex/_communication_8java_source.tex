@@ -1,0 +1,122 @@
+\hypertarget{_communication_8java_source}{}\subsection{Communication.\+java}
+\label{_communication_8java_source}\index{Communication.\+java@{Communication.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.lasalle.io\_trucks;
+00002 
+00003 \textcolor{keyword}{import} android.app.Activity;
+00004 \textcolor{keyword}{import} android.bluetooth.BluetoothAdapter;
+00005 \textcolor{keyword}{import} android.bluetooth.BluetoothDevice;
+00006 \textcolor{keyword}{import} android.content.BroadcastReceiver;
+00007 \textcolor{keyword}{import} android.content.Context;
+00008 \textcolor{keyword}{import} android.content.Intent;
+00009 \textcolor{keyword}{import} android.util.Log;
+00010 \textcolor{keyword}{import} android.widget.Toast;
+00011 
+00012 \textcolor{keyword}{import} java.util.Set;
+00013 
+\Hypertarget{_communication_8java_source_l00025}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{00025} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication}
+00026 \{
+\Hypertarget{_communication_8java_source_l00030}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aec1062036f071d51a4925a3080d71004}{00030}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String TAG = \textcolor{stringliteral}{"Communication"};
+\Hypertarget{_communication_8java_source_l00034}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{00034}     \textcolor{keyword}{private} BroadcastReceiver \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{receiverEtatBluetooth};
+\Hypertarget{_communication_8java_source_l00035}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aa226d389c696b51929ee0b62cfd04710}{00035}     \textcolor{keyword}{private} BroadcastReceiver \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aa226d389c696b51929ee0b62cfd04710}{receiverScan};
+\Hypertarget{_communication_8java_source_l00036}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aab37c21038f7b794ab77e6705b8b5938}{00036}     \textcolor{keyword}{private} BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+\Hypertarget{_communication_8java_source_l00037}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{00037}     \textcolor{keyword}{private} Set<BluetoothDevice> \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_af0441da9cbe4ea858b82214ece930197}{listeAppareilConnus};
+00038 
+\Hypertarget{_communication_8java_source_l00043}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}{00043}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}{demanderActivationBluetooth}(Context contextAcceuil)
+00044     \{
+00045         \textcolor{keywordflow}{if} (bluetoothAdapter == null)
+00046         \{
+00047             Log.i(TAG,\textcolor{stringliteral}{"demanderActivationBluetooth() bluetoothAdapter = null"});
+00048             Toast.makeText(contextAcceuil, R.string.str\_bluetoot\_inexistant, Toast.LENGTH\_SHORT).show();
+00049         \}
+00050         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!bluetoothAdapter.isEnabled())
+00051         \{
+00052             Log.i(TAG,\textcolor{stringliteral}{"demanderActivationBluetooth() bluetooth désactivé"});
+00053             Toast.makeText(contextAcceuil, R.string.str\_bluetooth\_eteint, Toast.LENGTH\_SHORT).show();
+00054             Intent enableBtIntent = \textcolor{keyword}{new} Intent(BluetoothAdapter.ACTION\_REQUEST\_ENABLE);
+00055             ((Activity) contextAcceuil).startActivityForResult(enableBtIntent,1);
+00056         \}
+00057         \textcolor{keywordflow}{else}
+00058         \{
+00059             Log.i(TAG,\textcolor{stringliteral}{"demanderActivationBluetooth() bluetooth activé"});
+00060             Toast.makeText(contextAcceuil, R.string.str\_bluetooth\_allumer, Toast.LENGTH\_SHORT).show();
+00061         \}
+00062     \}
+00063 
+\Hypertarget{_communication_8java_source_l00068}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}{00068}     \textcolor{keyword}{public} BroadcastReceiver \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}{ecouterEtatBluetooth}()
+00069     \{
+00070         receiverEtatBluetooth = \textcolor{keyword}{new} BroadcastReceiver()
+00071         \{
+00072             @Override
+00073             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onReceive(Context context, Intent intent)
+00074             \{
+00075                 \textcolor{keyword}{final} String action = intent.getAction();
+00076                 Log.i(TAG,\textcolor{stringliteral}{"onReceive() "} + action);
+00077                 \textcolor{keywordflow}{if} (action.equals(BluetoothAdapter.ACTION\_STATE\_CHANGED))
+00078                 \{
+00079                     \textcolor{keyword}{final} \textcolor{keywordtype}{int} state = intent.getIntExtra(BluetoothAdapter.EXTRA\_STATE, BluetoothAdapter.
+      ERROR);
+00080                     \textcolor{keywordflow}{switch} (state)
+00081                     \{
+00082                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_OFF:
+00083                             Log.i(TAG,\textcolor{stringliteral}{"onReceive() Bluetooth désactivé !"});
+00084                             Toast.makeText(context, R.string.str\_bluetooth\_eteint, Toast.LENGTH\_SHORT).show
+      ();
+00085                             \textcolor{keywordflow}{break};
+00086                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_TURNING\_OFF:
+00087                             Toast.makeText(context, R.string.str\_bluetooth\_eteint\_en\_cours, Toast.
+      LENGTH\_LONG).show();
+00088                             \textcolor{keywordflow}{break};
+00089                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_ON:
+00090                             Log.i(TAG,\textcolor{stringliteral}{"onReceive() Bluetooth activé !"});
+00091                             Toast.makeText(context, R.string.str\_bluetooth\_allumer, Toast.LENGTH\_SHORT).
+      show();
+00092                             \textcolor{keywordflow}{break};
+00093                         \textcolor{keywordflow}{case} BluetoothAdapter.STATE\_TURNING\_ON:
+00094                             Log.i(TAG,\textcolor{stringliteral}{"onReceive() Bluetooth s'active !"});
+00095                             Toast.makeText(context, R.string.str\_bluetooth\_allumer\_en\_cours, Toast.
+      LENGTH\_LONG).show();
+00096                             \textcolor{keywordflow}{break};
+00097                     \}
+00098                 \}
+00099             \}
+00100         \};
+00101 
+00102         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a4a45e2d6f9b84afa60b4a28b52f5a4bf}{receiverEtatBluetooth};
+00103     \}
+00104 
+\Hypertarget{_communication_8java_source_l00109}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}{00109}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}{rechercherAppareilConnu}(Context contextAcceuil)
+00110     \{
+00111         listeAppareilConnus = bluetoothAdapter.getBondedDevices();
+00112         \textcolor{keywordflow}{for}(BluetoothDevice blueDevice : listeAppareilConnus)
+00113         \{
+00114             Toast.makeText(contextAcceuil, \textcolor{stringliteral}{"Appareil "} + blueDevice.getName(), Toast.LENGTH\_SHORT).show();
+00115         \}
+00116     \}
+00117 
+\Hypertarget{_communication_8java_source_l00123}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}{00123}     \textcolor{keyword}{public} BluetoothDevice \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}{recupererAppareilBluetooth}(String nomAppareil)
+00124     \{
+00125         listeAppareilConnus = bluetoothAdapter.getBondedDevices();
+00126         \textcolor{keywordflow}{for}(BluetoothDevice blueDevice : listeAppareilConnus)
+00127         \{
+00128             \textcolor{keywordflow}{if}(blueDevice.getName().equals(nomAppareil))
+00129             \{
+00130                 Log.d(TAG, \textcolor{stringliteral}{"recupererAppareilBluetooth() io-trucks trouvé : "} + blueDevice.getName() + \textcolor{stringliteral}{" ("}
+       + blueDevice.getAddress() + \textcolor{stringliteral}{")"});
+00131                 \textcolor{keywordflow}{return} blueDevice;
+00132             \}
+00133         \}
+00134         \textcolor{keywordflow}{return} null;
+00135     \}
+00136 
+\Hypertarget{_communication_8java_source_l00141}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}{00141}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}{unregisterBluetooth}(Context contextAcceuil)
+00142     \{
+00143         \textcolor{keywordflow}{if} (bluetoothAdapter != null)
+00144         \{
+00145             bluetoothAdapter.cancelDiscovery();
+00146             contextAcceuil.unregisterReceiver(receiverEtatBluetooth);
+00147         \}
+00148     \}
+00149 \}
+\end{DoxyCode}

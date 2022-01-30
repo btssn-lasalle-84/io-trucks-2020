@@ -1,0 +1,144 @@
+\hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{}\subsection{Référence de la classe com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception}
+\label{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}\index{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception@{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception}}
+
+
+Déclaration de la classe \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{T\+Reception}.  
+
+
+
+
+Graphe de collaboration de com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_ad02425d61d6c923521c8f66f6b854b3c}{arreter} ()
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_a13e01a4a1d897c8643f63494b9f091cc}{run} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}{fini}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Déclaration de la classe \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{T\+Reception}. 
+
+Définition à la ligne \hyperlink{_peripherique_8java_source_l00260}{260} du fichier \hyperlink{_peripherique_8java_source}{Peripherique.\+java}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_ad02425d61d6c923521c8f66f6b854b3c}\label{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_ad02425d61d6c923521c8f66f6b854b3c}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception@{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception}!arreter@{arreter}}
+\index{arreter@{arreter}!com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception@{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception}}
+\paragraph{\texorpdfstring{arreter()}{arreter()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception.\+arreter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_peripherique_8java_source_l00312}{312} du fichier \hyperlink{_peripherique_8java_source}{Peripherique.\+java}.
+
+
+
+Référencé par \hyperlink{_peripherique_8java_source_l00235}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+deconnecter()}.
+
+
+\begin{DoxyCode}
+00313         \{
+00314             \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}{fini} == \textcolor{keyword}{false})
+00315             \{
+00316                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}{fini} = \textcolor{keyword}{true};
+00317             \}
+00318             \textcolor{keywordflow}{try}
+00319             \{
+00320                 \hyperlink{class_thread}{Thread}.sleep(250);
+00321             \}
+00322             \textcolor{keywordflow}{catch} (InterruptedException e)
+00323             \{
+00324                 e.printStackTrace();
+00325             \}
+00326         \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_a13e01a4a1d897c8643f63494b9f091cc}\label{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_a13e01a4a1d897c8643f63494b9f091cc}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception@{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception}!run@{run}}
+\index{run@{run}!com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception@{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception}}
+\paragraph{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_peripherique_8java_source_l00272}{272} du fichier \hyperlink{_peripherique_8java_source}{Peripherique.\+java}.
+
+
+
+Références \hyperlink{_peripherique_8java_source_l00034}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+C\+O\+D\+E\+\_\+\+R\+E\+C\+E\+P\+T\+I\+ON}.
+
+
+\begin{DoxyCode}
+00273         \{
+00274             Log.d(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a9ad17604c5e0a0ca93908a76af9db6cc}{TAG}, \textcolor{stringliteral}{"TReception run() start"});
+00275             BufferedReader reception = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa9909de8df9a7873f63d9e2a3e08772d}{receiveStream}));
+00276             \textcolor{keywordflow}{while} (!\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}{fini})
+00277             \{
+00278                 \textcolor{keywordflow}{try}
+00279                 \{
+00280                     String trame = \textcolor{stringliteral}{""};
+00281                     \textcolor{keywordflow}{if} (reception.ready())
+00282                     \{
+00283                         trame = reception.readLine();
+00284                     \}
+00285                     \textcolor{keywordflow}{if} (trame.length() > 0)
+00286                     \{
+00287                         Log.d(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a9ad17604c5e0a0ca93908a76af9db6cc}{TAG}, \textcolor{stringliteral}{"run() trame : "} + trame);
+00288                         Message msg = Message.obtain();
+00289                         msg.what = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a89c00428bc04098ada95e4c5d4b4a168}{Peripherique}.CODE\_RECEPTION;
+00290                         msg.obj = trame;
+00291                         handlerUI.sendMessage(msg);
+00292                     \}
+00293                 \}
+00294                 \textcolor{keywordflow}{catch} (IOException e)
+00295                 \{
+00296                     Log.d(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a9ad17604c5e0a0ca93908a76af9db6cc}{TAG}, \textcolor{stringliteral}{"Erreur read()"});
+00297                     e.printStackTrace();
+00298                 \}
+00299 
+00300                 \textcolor{keywordflow}{try}
+00301                 \{
+00302                     \hyperlink{class_thread}{Thread}.sleep(250);
+00303                 \}
+00304                 \textcolor{keywordflow}{catch} (InterruptedException e)
+00305                 \{
+00306                     e.printStackTrace();
+00307                 \}
+00308             \}
+00309             Log.d(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a9ad17604c5e0a0ca93908a76af9db6cc}{TAG}, \textcolor{stringliteral}{"TReception run() stop"});
+00310         \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}\label{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception@{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception}!fini@{fini}}
+\index{fini@{fini}!com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception@{com\+::lasalle\+::io\+\_\+trucks\+::\+Peripherique\+::\+T\+Reception}}
+\paragraph{\texorpdfstring{fini}{fini}}
+{\footnotesize\ttfamily boolean com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+T\+Reception.\+fini\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_peripherique_8java_source_l00263}{263} du fichier \hyperlink{_peripherique_8java_source}{Peripherique.\+java}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_peripherique_8java}{Peripherique.\+java}\end{DoxyCompactItemize}

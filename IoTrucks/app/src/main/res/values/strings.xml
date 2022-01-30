@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Io-Trucks</string>
+    <string name="str_menu_action">Menu</string>
+    <string name="str_description_fleche">Flèche de retour arrière</string>
+    <string name="str_description_tutoriel">Bouton d\'accès au tutoriel</string>
+    <string name="str_description_triangle">Bouton de commande du triangle</string>
+    <string name="str_etat_triangle">Triangle</string>
+    <string name="str_description_charge">Affichage du niveau de charge</string>
+    <string name="str_etat_charge">Charge</string>
+    <string name="str_description_gyrophares">Bouton de mise en marche des gyrophares</string>
+    <string name="str_etat_gyrophares">Gyrophares</string>
+    <string name="str_bluetooth_eteint">Bluetooth désactivé !</string>
+    <string name="str_bluetooth_allumer">Bluetooth activé !</string>
+    <string name="str_bluetooth_eteint_en_cours">Le Bluetooth se désactive !</string>
+    <string name="str_bluetooth_allumer_en_cours">Le Bluetooth s\'active !</string>
+    <string name="str_bluetoot_inexistant">Votre appareil n\'est pas équipé du Bluetooth !</string>
+    <string name="str_description_accueil">Image D\'accueil</string>
+    <string name="str_accueil">Io-Trucks</string>
+    <string name="str_etat_eclairage">Eclairage de confort</string>
+    <string name="str_description_eclairage">Image du bouton d\'éclairage</string>
+    <string name="str_EtatConnection">Déconnecté</string>
+    <string name="str_description_EtatConnection">Image de l\'état de connexion</string>
+</resources>

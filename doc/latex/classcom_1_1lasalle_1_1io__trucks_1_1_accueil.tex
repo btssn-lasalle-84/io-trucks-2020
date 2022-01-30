@@ -1,0 +1,143 @@
+\hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{}\subsection{Référence de la classe com.\+lasalle.\+io\+\_\+trucks.\+Accueil}
+\label{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}\index{com.\+lasalle.\+io\+\_\+trucks.\+Accueil@{com.\+lasalle.\+io\+\_\+trucks.\+Accueil}}
+
+
+Classe de l\textquotesingle{}activité \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{Accueil}  La classe Acceuil est l\textquotesingle{}activité de démarrage de l\textquotesingle{}application.  
+
+
+
+
+Graphe de collaboration de com.\+lasalle.\+io\+\_\+trucks.\+Accueil\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classcom_1_1lasalle_1_1io__trucks_1_1_accueil__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_acd7cff413b44344de6b037c85f4f50bb}{on\+Create} (Bundle saved\+Instance\+State)
+\begin{DoxyCompactList}\small\item\em Méthode appelée à la création de l\textquotesingle{}activité \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{Accueil}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Animation \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation}
+\item 
+Image\+View \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}{image\+View}
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a1a3ee3728fab660903bb4399a2e49d49}{T\+AG} = \char`\"{}I\+H\+M\+Accueil\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Classe de l\textquotesingle{}activité \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{Accueil}  La classe Acceuil est l\textquotesingle{}activité de démarrage de l\textquotesingle{}application. 
+
+Définition à la ligne \hyperlink{_accueil_8java_source_l00026}{26} du fichier \hyperlink{_accueil_8java_source}{Accueil.\+java}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_acd7cff413b44344de6b037c85f4f50bb}\label{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_acd7cff413b44344de6b037c85f4f50bb}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}!on\+Create@{on\+Create}}
+\index{on\+Create@{on\+Create}!com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}}
+\paragraph{\texorpdfstring{on\+Create()}{onCreate()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Accueil.\+on\+Create (\begin{DoxyParamCaption}\item[{Bundle}]{saved\+Instance\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée à la création de l\textquotesingle{}activité \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil}{Accueil}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em saved\+Instance\+State} & \\
+\hline
+\end{DoxyParams}
+Méthode perméttant la gestion du démarrage de l\textquotesingle{}animation Cette méthode définit ce qui se passe au démarrage de l\textquotesingle{}animation 
+\begin{DoxyParams}{Paramètres}
+{\em animation} & Animation vers l\textquotesingle{}activité suivante\\
+\hline
+\end{DoxyParams}
+Méthode perméttant la gestion de la fin de l\textquotesingle{}aniamtion Cette méthode définit ce qui se passe à la fin de l\textquotesingle{}animation Ici, elle démarre l\textquotesingle{}activité \+: \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{Main\+Activity} 
+\begin{DoxyParams}{Paramètres}
+{\em animation} & Animation vers l\textquotesingle{}activité suivante\\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_accueil_8java_source_l00043}{43} du fichier \hyperlink{_accueil_8java_source}{Accueil.\+java}.
+
+
+\begin{DoxyCode}
+00044     \{
+00045         super.onCreate(savedInstanceState);
+00046         setContentView(R.layout.activity\_accueil);
+00047         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a1a3ee3728fab660903bb4399a2e49d49}{TAG},\textcolor{stringliteral}{"onCreate()"});
+00048 
+00049         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}{imageView} = (ImageView)findViewById(R.id.imageView);
+00050         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation} = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade\_in);
+00051         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation}.setAnimationListener(\textcolor{keyword}{new} Animation.AnimationListener()
+00052         \{
+00058             @Override
+00059             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAnimationStart(Animation \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation})
+00060             \{
+00061             \}
+00062 
+00069             @Override
+00070             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAnimationEnd(Animation \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation})
+00071             \{
+00072                 \textcolor{comment}{// A la fin de l'animation, on lance l'activité principale}
+00073                 Intent intent = \textcolor{keyword}{new} Intent(Accueil.this, MainActivity.class);
+00074                 startActivity(intent);
+00075             \}
+00076 
+00077             @Override
+00078             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onAnimationRepeat(Animation \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation})
+00079             \{
+00080             \}
+00081         \});
+00082         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}{imageView}.startAnimation(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}{animation});
+00083     \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}\label{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a61fc1cafddccd078251374fa264adc4f}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}!animation@{animation}}
+\index{animation@{animation}!com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}}
+\paragraph{\texorpdfstring{animation}{animation}}
+{\footnotesize\ttfamily Animation com.\+lasalle.\+io\+\_\+trucks.\+Accueil.\+animation\hspace{0.3cm}{\ttfamily [private]}}
+
+Attributs 
+
+Définition à la ligne \hyperlink{_accueil_8java_source_l00035}{35} du fichier \hyperlink{_accueil_8java_source}{Accueil.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}\label{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a63484f52fc632e91aad7275ea7be0f7b}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}!image\+View@{image\+View}}
+\index{image\+View@{image\+View}!com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}}
+\paragraph{\texorpdfstring{image\+View}{imageView}}
+{\footnotesize\ttfamily Image\+View com.\+lasalle.\+io\+\_\+trucks.\+Accueil.\+image\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_accueil_8java_source_l00036}{36} du fichier \hyperlink{_accueil_8java_source}{Accueil.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a1a3ee3728fab660903bb4399a2e49d49}\label{classcom_1_1lasalle_1_1io__trucks_1_1_accueil_a1a3ee3728fab660903bb4399a2e49d49}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}!T\+AG@{T\+AG}}
+\index{T\+AG@{T\+AG}!com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil@{com\+::lasalle\+::io\+\_\+trucks\+::\+Accueil}}
+\paragraph{\texorpdfstring{T\+AG}{TAG}}
+{\footnotesize\ttfamily final String com.\+lasalle.\+io\+\_\+trucks.\+Accueil.\+T\+AG = \char`\"{}I\+H\+M\+Accueil\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Constantes 
+
+Définition à la ligne \hyperlink{_accueil_8java_source_l00031}{31} du fichier \hyperlink{_accueil_8java_source}{Accueil.\+java}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_accueil_8java}{Accueil.\+java}\end{DoxyCompactItemize}

@@ -1,0 +1,270 @@
+\hypertarget{_peripherique_8java_source}{}\subsection{Peripherique.\+java}
+\label{_peripherique_8java_source}\index{Peripherique.\+java@{Peripherique.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.lasalle.io\_trucks;
+00002 
+00003 \textcolor{keyword}{import} android.bluetooth.BluetoothDevice;
+00004 \textcolor{keyword}{import} android.bluetooth.BluetoothSocket;
+00005 \textcolor{keyword}{import} android.os.Handler;
+00006 \textcolor{keyword}{import} android.os.Message;
+00007 \textcolor{keyword}{import} android.util.Log;
+00008 
+00009 \textcolor{keyword}{import} java.io.BufferedReader;
+00010 \textcolor{keyword}{import} java.io.IOException;
+00011 \textcolor{keyword}{import} java.io.InputStream;
+00012 \textcolor{keyword}{import} java.io.InputStreamReader;
+00013 \textcolor{keyword}{import} java.io.OutputStream;
+00014 \textcolor{keyword}{import} java.util.UUID;
+00015 
+\Hypertarget{_peripherique_8java_source_l00027}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{00027} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique} \textcolor{keyword}{extends} \hyperlink{class_thread}{Thread}
+00028 \{
+\Hypertarget{_peripherique_8java_source_l00032}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a9ad17604c5e0a0ca93908a76af9db6cc}{00032}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a9ad17604c5e0a0ca93908a76af9db6cc}{TAG} = \textcolor{stringliteral}{"Peripherique"};
+\Hypertarget{_peripherique_8java_source_l00033}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a46ce17bdb3396e4aee94ea06a0bd8556}{00033}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a46ce17bdb3396e4aee94ea06a0bd8556}{CODE\_CONNEXION} = 0;
+\Hypertarget{_peripherique_8java_source_l00034}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2abb4880d1dd4140379b3ff71cff8cf3}{00034}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2abb4880d1dd4140379b3ff71cff8cf3}{CODE\_RECEPTION} = 1;
+\Hypertarget{_peripherique_8java_source_l00035}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aad9e383353fd86265a2eeeac2d2c901f}{00035}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aad9e383353fd86265a2eeeac2d2c901f}{CODE\_EMISSION} = 2;
+\Hypertarget{_peripherique_8java_source_l00036}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a44d0841cdcad04f7d112cb30d12a60f0}{00036}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a44d0841cdcad04f7d112cb30d12a60f0}{CODE\_DECONNEXION} = 3;
+\Hypertarget{_peripherique_8java_source_l00040}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a57ad735952307998eddf5277be95ec95}{00040}     \textcolor{keyword}{private} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a57ad735952307998eddf5277be95ec95}{nom};
+\Hypertarget{_peripherique_8java_source_l00041}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a0f0c207b12d3aded58623cfe0f9cd6d2}{00041}     \textcolor{keyword}{private} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a0f0c207b12d3aded58623cfe0f9cd6d2}{adresse};
+\Hypertarget{_peripherique_8java_source_l00042}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afc44cb5a50cb29c450ef962efc735532}{00042}     \textcolor{keyword}{private} Handler \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afc44cb5a50cb29c450ef962efc735532}{handler} = null;
+\Hypertarget{_peripherique_8java_source_l00043}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa42a263edf31850160d722219115a0ea}{00043}     \textcolor{keyword}{private} BluetoothDevice \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa42a263edf31850160d722219115a0ea}{device} = null;
+\Hypertarget{_peripherique_8java_source_l00044}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ac5f2ba9eadd31a1f08f745e68476d238}{00044}     \textcolor{keyword}{private} BluetoothSocket \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ac5f2ba9eadd31a1f08f745e68476d238}{socket} = null;
+\Hypertarget{_peripherique_8java_source_l00045}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa9909de8df9a7873f63d9e2a3e08772d}{00045}     \textcolor{keyword}{private} InputStream \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa9909de8df9a7873f63d9e2a3e08772d}{receiveStream} = null;
+\Hypertarget{_peripherique_8java_source_l00046}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a57c51f49b9b0ce3b68a257a96198106b}{00046}     \textcolor{keyword}{private} OutputStream \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a57c51f49b9b0ce3b68a257a96198106b}{sendStream} = null;
+\Hypertarget{_peripherique_8java_source_l00047}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ac1dde247bc593447515e3d7b3ad73550}{00047}     \textcolor{keyword}{private} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{TReception} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ac1dde247bc593447515e3d7b3ad73550}{treception} = null;
+00048 
+\Hypertarget{_peripherique_8java_source_l00054}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a89c00428bc04098ada95e4c5d4b4a168}{00054}     \textcolor{keyword}{public} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a89c00428bc04098ada95e4c5d4b4a168}{Peripherique}(BluetoothDevice device, Handler handler)
+00055     \{
+00056         \textcolor{keywordflow}{if} (device != null)
+00057         \{
+00058             this.device = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa42a263edf31850160d722219115a0ea}{device};
+00059             this.nom = device.getName();
+00060             this.adresse = device.getAddress();
+00061             this.handler = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afc44cb5a50cb29c450ef962efc735532}{handler};
+00062         \}
+00063         \textcolor{keywordflow}{else}
+00064         \{
+00065             this.device = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aa42a263edf31850160d722219115a0ea}{device};
+00066             this.nom = \textcolor{stringliteral}{"Aucun"};
+00067             this.adresse = \textcolor{stringliteral}{""};
+00068             this.handler = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afc44cb5a50cb29c450ef962efc735532}{handler};
+00069         \}
+00070 
+00071         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2965bd91f73bf87536e1c743ddc2b76a}{creerSocket}();
+00072     \}
+00073 
+\Hypertarget{_peripherique_8java_source_l00077}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2965bd91f73bf87536e1c743ddc2b76a}{00077}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2965bd91f73bf87536e1c743ddc2b76a}{creerSocket}()
+00078     \{
+00079         \textcolor{keywordflow}{try}
+00080         \{
+00081             \textcolor{keywordflow}{if}(device != null)
+00082             \{
+00083                 socket = device.createRfcommSocketToServiceRecord(UUID.fromString(\textcolor{stringliteral}{"
+      00001101-0000-1000-8000-00805F9B34FB"}));
+00084                 receiveStream = socket.getInputStream();
+00085                 sendStream = socket.getOutputStream();
+00086             \}
+00087         \}
+00088         \textcolor{keywordflow}{catch} (IOException e)
+00089         \{
+00090             Log.d(TAG, \textcolor{stringliteral}{"Erreur createRfcommSocketToServiceRecord()"});
+00091             e.printStackTrace();
+00092             socket = null;
+00093         \}
+00094         \textcolor{keywordflow}{if} (socket != null)
+00095         \{
+00096             treception = \textcolor{keyword}{new} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{TReception}(handler);
+00097         \}
+00098     \}
+00099 
+\Hypertarget{_peripherique_8java_source_l00104}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_abb25c792075ebe58d52419c84004c258}{00104}     \textcolor{keyword}{public} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_abb25c792075ebe58d52419c84004c258}{getNom}()
+00105     \{
+00106         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a57ad735952307998eddf5277be95ec95}{nom};
+00107     \}
+00108 
+\Hypertarget{_peripherique_8java_source_l00113}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a4c8533394dd5322a31b7d09d17bfc796}{00113}     \textcolor{keyword}{public} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a4c8533394dd5322a31b7d09d17bfc796}{getAdresse}()
+00114     \{
+00115         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a0f0c207b12d3aded58623cfe0f9cd6d2}{adresse};
+00116     \}
+00117 
+\Hypertarget{_peripherique_8java_source_l00122}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{00122}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}()
+00123     \{
+00124         \textcolor{keywordflow}{return} socket.isConnected();
+00125     \}
+00126 
+\Hypertarget{_peripherique_8java_source_l00131}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a1e61a36e2fb0d3665f1dcc41e5ea06b2}{00131}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a1e61a36e2fb0d3665f1dcc41e5ea06b2}{setNom}(String nom)
+00132     \{
+00133         this.nom = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a57ad735952307998eddf5277be95ec95}{nom};
+00134     \}
+00135 
+\Hypertarget{_peripherique_8java_source_l00140}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a3ce69dc3b561771d428523f8df08cbc9}{00140}     \textcolor{keyword}{public} String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a3ce69dc3b561771d428523f8df08cbc9}{toString}()
+00141     \{
+00142         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"\(\backslash\)nNom : "} + nom + \textcolor{stringliteral}{"\(\backslash\)nAdresse : "} + \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a0f0c207b12d3aded58623cfe0f9cd6d2}{adresse};
+00143     \}
+00144 
+\Hypertarget{_peripherique_8java_source_l00149}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a7f691381f5164b92f8ff3f06561db656}{00149}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a7f691381f5164b92f8ff3f06561db656}{envoyer}(\textcolor{keyword}{final} String data)
+00150     \{
+00151         \textcolor{keywordflow}{if} (socket == null)
+00152             \textcolor{keywordflow}{return};
+00153 
+00154         \textcolor{keyword}{new} \hyperlink{class_thread}{Thread}()
+00155         \{
+00156             @Override
+00157             \textcolor{keyword}{public} \textcolor{keywordtype}{void} run()
+00158             \{
+00159                 \textcolor{keywordflow}{try}
+00160                 \{
+00161                     \textcolor{keywordflow}{if} (socket.isConnected())
+00162                     \{
+00163                         sendStream.write(data.getBytes());
+00164                         sendStream.flush();
+00165                         Message msg = Message.obtain();
+00166                         msg.what = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_aad9e383353fd86265a2eeeac2d2c901f}{CODE\_EMISSION};
+00167                         msg.obj = data;
+00168                         handler.sendMessage(msg);
+00169                     \}
+00170                 \}
+00171                 \textcolor{keywordflow}{catch} (IOException e)
+00172                 \{
+00173                     Log.d(TAG, \textcolor{stringliteral}{"Erreur write()"});
+00174                     e.printStackTrace();
+00175                 \}
+00176             \}
+00177         \}.start();
+00178     \}
+00179 
+\Hypertarget{_peripherique_8java_source_l00183}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ab2c35019f3ba71ec1b3b59470dc383ae}{00183}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ab2c35019f3ba71ec1b3b59470dc383ae}{connecter}()
+00184     \{
+00185         \textcolor{keyword}{new} \hyperlink{class_thread}{Thread}()
+00186         \{
+00187             @Override
+00188             \textcolor{keyword}{public} \textcolor{keywordtype}{void} run()
+00189             \{
+00190                 \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a982a4e5a8178b4e9f56e6611fad707ad}{connecterSocket}())
+00191                 \{
+00192                     \textcolor{keywordflow}{return};
+00193                 \}
+00194                 \textcolor{comment}{// sinon reconnexion}
+00195                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2965bd91f73bf87536e1c743ddc2b76a}{creerSocket}();
+00196                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a982a4e5a8178b4e9f56e6611fad707ad}{connecterSocket}();
+00197 
+00198             \}
+00199         \}.start();
+00200     \}
+00201 
+\Hypertarget{_peripherique_8java_source_l00206}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a982a4e5a8178b4e9f56e6611fad707ad}{00206}     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a982a4e5a8178b4e9f56e6611fad707ad}{connecterSocket}()
+00207     \{
+00208         \textcolor{keywordflow}{try}
+00209         \{
+00210             \textcolor{keywordflow}{if}(socket == null)
+00211                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00212             \textcolor{keywordflow}{if} (!socket.isConnected())
+00213             \{
+00214                 socket.connect();
+00215                 Message msg = Message.obtain();
+00216                 msg.what = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a46ce17bdb3396e4aee94ea06a0bd8556}{CODE\_CONNEXION};
+00217                 handler.sendMessage(msg);
+00218 
+00219                 treception.start();
+00220                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00221             \}
+00222         \}
+00223         \textcolor{keywordflow}{catch} (IOException e)
+00224         \{
+00225             Log.d(TAG, \textcolor{stringliteral}{"Erreur connect()"});
+00226             e.printStackTrace();
+00227         \}
+00228         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00229     \}
+00230 
+\Hypertarget{_peripherique_8java_source_l00235}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afe5345d0dc31b1af1b311278241e228d}{00235}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afe5345d0dc31b1af1b311278241e228d}{deconnecter}()
+00236     \{
+00237         \textcolor{keywordflow}{try}
+00238         \{
+00239             treception.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_ad02425d61d6c923521c8f66f6b854b3c}{arreter}();
+00240 
+00241             socket.close();
+00242             Message msg = Message.obtain();
+00243             msg.what = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a44d0841cdcad04f7d112cb30d12a60f0}{CODE\_DECONNEXION};
+00244             handler.sendMessage(msg);
+00245 
+00246             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00247         \}
+00248         \textcolor{keywordflow}{catch} (IOException e)
+00249         \{
+00250             Log.d(TAG, \textcolor{stringliteral}{"Erreur close()"});
+00251             e.printStackTrace();
+00252             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00253         \}
+00254     \}
+00255 
+\Hypertarget{_peripherique_8java_source_l00260}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{00260}     \textcolor{keyword}{private} \textcolor{keyword}{class }\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{TReception} \textcolor{keyword}{extends} \hyperlink{class_thread}{Thread}
+00261     \{
+00262         Handler handlerUI;
+\Hypertarget{_peripherique_8java_source_l00263}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}{00263}         \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_af9ba647e407a9a150e1c37972233dbf9}{fini};
+00264 
+00265         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception}{TReception}(Handler h)
+00266         \{
+00267             handlerUI = h;
+00268             fini = \textcolor{keyword}{false};
+00269         \}
+00270 
+00271         @Override
+\Hypertarget{_peripherique_8java_source_l00272}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_a13e01a4a1d897c8643f63494b9f091cc}{00272}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_a13e01a4a1d897c8643f63494b9f091cc}{run}()
+00273         \{
+00274             Log.d(TAG, \textcolor{stringliteral}{"TReception run() start"});
+00275             BufferedReader reception = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(receiveStream));
+00276             \textcolor{keywordflow}{while} (!fini)
+00277             \{
+00278                 \textcolor{keywordflow}{try}
+00279                 \{
+00280                     String trame = \textcolor{stringliteral}{""};
+00281                     \textcolor{keywordflow}{if} (reception.ready())
+00282                     \{
+00283                         trame = reception.readLine();
+00284                     \}
+00285                     \textcolor{keywordflow}{if} (trame.length() > 0)
+00286                     \{
+00287                         Log.d(TAG, \textcolor{stringliteral}{"run() trame : "} + trame);
+00288                         Message msg = Message.obtain();
+00289                         msg.what = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a2abb4880d1dd4140379b3ff71cff8cf3}{CODE\_RECEPTION};
+00290                         msg.obj = trame;
+00291                         handlerUI.sendMessage(msg);
+00292                     \}
+00293                 \}
+00294                 \textcolor{keywordflow}{catch} (IOException e)
+00295                 \{
+00296                     Log.d(TAG, \textcolor{stringliteral}{"Erreur read()"});
+00297                     e.printStackTrace();
+00298                 \}
+00299 
+00300                 \textcolor{keywordflow}{try}
+00301                 \{
+00302                     \hyperlink{class_thread}{Thread}.sleep(250);
+00303                 \}
+00304                 \textcolor{keywordflow}{catch} (InterruptedException e)
+00305                 \{
+00306                     e.printStackTrace();
+00307                 \}
+00308             \}
+00309             Log.d(TAG, \textcolor{stringliteral}{"TReception run() stop"});
+00310         \}
+00311 
+\Hypertarget{_peripherique_8java_source_l00312}\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_ad02425d61d6c923521c8f66f6b854b3c}{00312}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_1_1_t_reception_ad02425d61d6c923521c8f66f6b854b3c}{arreter}()
+00313         \{
+00314             \textcolor{keywordflow}{if} (fini == \textcolor{keyword}{false})
+00315             \{
+00316                 fini = \textcolor{keyword}{true};
+00317             \}
+00318             \textcolor{keywordflow}{try}
+00319             \{
+00320                 \hyperlink{class_thread}{Thread}.sleep(250);
+00321             \}
+00322             \textcolor{keywordflow}{catch} (InterruptedException e)
+00323             \{
+00324                 e.printStackTrace();
+00325             \}
+00326         \}
+00327     \}
+00328 \}
+\end{DoxyCode}

@@ -1,0 +1,946 @@
+\hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{}\subsection{Référence de la classe com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity}
+\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}\index{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity@{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity}}
+
+
+Classe I\+HM principale.  
+
+
+
+
+Graphe de collaboration de com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}{on\+Click} (View element)
+\begin{DoxyCompactList}\small\item\em Méthode de gestion des clics Ceci est la méthode qui gère l\textquotesingle{}écoute des clics sur les différents widgets de l\textquotesingle{}interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}{on\+Create} (Bundle saved\+Instance\+State)
+\begin{DoxyCompactList}\small\item\em Méthode appelée à la création de l\textquotesingle{}activité \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{Main\+Activity}. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a41e9b1eab2362456217786165b87d25e}{on\+Destroy} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée à la destruction de l\textquotesingle{}application (après \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop()} et détruite par le système Android) \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}{on\+Pause} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée après qu\textquotesingle{}une boîte de dialogue s\textquotesingle{}est affichée (on reprend sur un \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}{on\+Resume()}) ou avant \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop()} (activité plus visible) \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}{on\+Resume} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée après \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}{on\+Start()} ou après \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}{on\+Pause()} \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}{on\+Start} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée au démarrage après le \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}{on\+Create()} ou un restart après un \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop()} \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée lorsque l\textquotesingle{}activité n\textquotesingle{}est plus visible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}{activer\+Vue} ()
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}{afficher\+Etat\+S1} (String\mbox{[}$\,$\mbox{]} trame)
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}{creer\+Liason\+Receiver\+Etat\+Bluetooth} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour créer les Registers de l\textquotesingle{}état du bluetooth et donc le lien avec l\textquotesingle{}état du bluetooth. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}{decoder\+Trame} (String trame)
+\begin{DoxyCompactList}\small\item\em Méthode perméttant de décoder les trames reçues. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{demander\+Etats} ()
+\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyer\+Trame} (String trame)
+\begin{DoxyCompactList}\small\item\em Méthode qui envoie une trame au périphérique Bluetooth. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}{initialiser\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour initialiser les Widgets. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}{recuperer\+Widgets} ()
+\begin{DoxyCompactList}\small\item\em Méthode pour associer la vue à l\textquotesingle{}objet des Widgets. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{renitialiser\+Vue} ()
+\begin{DoxyCompactList}\small\item\em Méthode permettant de rénitialiser la vue de l\textquotesingle{}activitée. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}{traiter\+Trame} (String\mbox{[}$\,$\mbox{]} trame)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de traiter les trames en fonctions de leurs contennue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{button\+Bluetooth}
+\item 
+Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{button\+Rafraichir}
+\item 
+Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}{button\+Rechercher}
+\item 
+\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communication\+Bluetooth} = new \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication}()
+\item 
+Boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etat\+Eclairage} = false
+\item 
+Boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etat\+Gyrophare} = false
+\item 
+Boolean \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etat\+Triangle} = false
+\item 
+final Handler \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}{handler}
+\begin{DoxyCompactList}\small\item\em Handler de l\textquotesingle{}application et des périphériques bluetooth Cette handler permet de gérer le thread de communication de l\textquotesingle{}application. \end{DoxyCompactList}\item 
+Image\+Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{image\+Button\+Eclairage}
+\item 
+Image\+Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{image\+Button\+Gyrophare}
+\item 
+Image\+Button \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{image\+Button\+Triangle}
+\item 
+Image\+View \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}{image\+Etat\+Connection}
+\item 
+\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripherique\+Bluetooth} = null
+\item 
+Text\+View \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}{text\+Etat\+Connection}
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{T\+AG} = \char`\"{}I\+H\+M\+Main\+Activity\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Classe I\+HM principale. 
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00031}{31} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!activer\+Vue@{activer\+Vue}}
+\index{activer\+Vue@{activer\+Vue}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{activer\+Vue()}{activerVue()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+activer\+Vue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00293}{293} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+\begin{DoxyCode}
+00294     \{
+00295         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth}.setText(\textcolor{stringliteral}{"Déconnecter"});
+00296         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{buttonRafraichir}.setEnabled(\textcolor{keyword}{true});
+00297         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setEnabled(\textcolor{keyword}{true});
+00298         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setEnabled(\textcolor{keyword}{true});
+00299         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setEnabled(\textcolor{keyword}{true});
+00300         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}{imageEtatConnection}.setImageResource(R.drawable.green\_cricle);
+00301         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}{textEtatConnection}.setText(\textcolor{stringliteral}{"Connecter"});
+00302     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!afficher\+Etat\+S1@{afficher\+Etat\+S1}}
+\index{afficher\+Etat\+S1@{afficher\+Etat\+S1}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{afficher\+Etat\+S1()}{afficherEtatS1()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+afficher\+Etat\+S1 (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00360}{360} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_protocole_8java_source_l00027}{com.\+lasalle.\+io\+\_\+trucks.\+Protocole.\+L\+E\+VE}, et \hyperlink{_protocole_8java_source_l00019}{com.\+lasalle.\+io\+\_\+trucks.\+Protocole.\+ON}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00348}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+traiter\+Trame()}.
+
+
+\begin{DoxyCode}
+00361     \{
+00362         Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"traiterTrame() trame[2] = "} + trame[2] + \textcolor{stringliteral}{" (triangle)"});
+00363         \textcolor{keywordflow}{if}(trame[2].equals(Protocole.LEVE))
+00364         \{
+00365             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setImageResource(R.drawable.triangle);
+00366             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etatTriangle} = \textcolor{keyword}{true};
+00367         \}
+00368         \textcolor{keywordflow}{else}
+00369         \{
+00370             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setImageResource(R.drawable.triangle\_b\_w);
+00371             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etatTriangle} = \textcolor{keyword}{false};
+00372         \}
+00373 
+00374         Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"traiterTrame() trame[3] = "} + trame[3] + \textcolor{stringliteral}{" (gyrophare)"});
+00375         \textcolor{keywordflow}{if}(trame[3].equals(Protocole.ON))
+00376         \{
+00377             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setImageResource(R.drawable.flash);
+00378             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etatGyrophare} = \textcolor{keyword}{true};
+00379         \}
+00380         \textcolor{keywordflow}{else}
+00381         \{
+00382             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setImageResource(R.drawable.flash\_b\_w);
+00383             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etatGyrophare} = \textcolor{keyword}{false};
+00384         \}
+00385 
+00386         Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"traiterTrame() trame[4] = "} + trame[4] + \textcolor{stringliteral}{" (éclairage)"});
+00387         \textcolor{keywordflow}{if}(trame[4].equals(Protocole.ON))
+00388         \{
+00389             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setImageResource(R.drawable.spotlight);
+00390             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etatEclairage} = \textcolor{keyword}{true};
+00391         \}
+00392         \textcolor{keywordflow}{else}
+00393         \{
+00394             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setImageResource(R.drawable.spotlight\_b\_w);
+00395             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etatEclairage} = \textcolor{keyword}{false};
+00396         \}
+00397     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!creer\+Liason\+Receiver\+Etat\+Bluetooth@{creer\+Liason\+Receiver\+Etat\+Bluetooth}}
+\index{creer\+Liason\+Receiver\+Etat\+Bluetooth@{creer\+Liason\+Receiver\+Etat\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{creer\+Liason\+Receiver\+Etat\+Bluetooth()}{creerLiasonReceiverEtatBluetooth()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+creer\+Liason\+Receiver\+Etat\+Bluetooth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode pour créer les Registers de l\textquotesingle{}état du bluetooth et donc le lien avec l\textquotesingle{}état du bluetooth. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00287}{287} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_communication_8java_source_l00068}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+ecouter\+Etat\+Bluetooth()}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00085}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Resume()}.
+
+
+\begin{DoxyCode}
+00288     \{
+00289         IntentFilter filter = \textcolor{keyword}{new} IntentFilter(BluetoothAdapter.ACTION\_STATE\_CHANGED);
+00290         registerReceiver(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communicationBluetooth}.
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aee896ab782ae245bdb1177d3d80ba193}{ecouterEtatBluetooth}(), filter);
+00291     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!decoder\+Trame@{decoder\+Trame}}
+\index{decoder\+Trame@{decoder\+Trame}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{decoder\+Trame()}{decoderTrame()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+decoder\+Trame (\begin{DoxyParamCaption}\item[{String}]{trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode perméttant de décoder les trames reçues. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em trame} & Contient la trame reçue \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00325}{325} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_protocole_8java_source_l00009}{com.\+lasalle.\+io\+\_\+trucks.\+Protocole.\+D\+E\+L\+I\+M\+I\+T\+E\+U\+R\+\_\+\+C\+H\+A\+MP}, \hyperlink{_protocole_8java_source_l00010}{com.\+lasalle.\+io\+\_\+trucks.\+Protocole.\+D\+E\+L\+I\+M\+I\+T\+E\+U\+R\+\_\+\+F\+IN}, \hyperlink{_protocole_8java_source_l00008}{com.\+lasalle.\+io\+\_\+trucks.\+Protocole.\+E\+N\+\_\+\+T\+E\+TE}, et \hyperlink{_main_activity_8java_source_l00348}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+traiter\+Trame()}.
+
+
+\begin{DoxyCode}
+00326     \{
+00327         String nouvelleTrame = \textcolor{stringliteral}{""};
+00328         \textcolor{comment}{// Exemple : trame = "$iotruck;S1;0;0;0\(\backslash\)r\(\backslash\)n"}
+00329         nouvelleTrame = trame.replace(Protocole.EN\_TETE,\textcolor{stringliteral}{""}); \textcolor{comment}{// enlever aussi le ; ?}
+00330         \textcolor{comment}{// Exemple : nouvelleTrame = ";S1;0;0;0\(\backslash\)r\(\backslash\)n"}
+00331         nouvelleTrame.replace(Protocole.DELIMITEUR\_FIN,\textcolor{stringliteral}{""});
+00332         \textcolor{comment}{// Exemple : nouvelleTrame = ";S1;0;0;0"}
+00333         String[] trameCouper = nouvelleTrame.split(Protocole.DELIMITEUR\_CHAMP);
+00334         \textcolor{comment}{// Exemple : trameCouper = [0];[1];[2];[3];[4]}
+00335         Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"decoderTrame() découpage de la trame"});
+00336         \textcolor{comment}{// le premier champ est vide}
+00337         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < trameCouper.length; i++)
+00338         \{
+00339             Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"decoderTrame() champ "} + i + \textcolor{stringliteral}{" = "} + trameCouper[i]);
+00340         \}
+00341         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}{traiterTrame}(trameCouper);
+00342     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!demander\+Etats@{demander\+Etats}}
+\index{demander\+Etats@{demander\+Etats}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{demander\+Etats()}{demanderEtats()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+demander\+Etats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Méthode qui envoie les trames de demande d\textquotesingle{}états S1 et S2 
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00438}{438} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_main_activity_8java_source_l00242}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+envoyer\+Trame()}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00131}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Click()}.
+
+
+\begin{DoxyCode}
+00439     \{
+00440         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;S1\(\backslash\)r\(\backslash\)n"});
+00441         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;S2\(\backslash\)r\(\backslash\)n"});
+00442     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!envoyer\+Trame@{envoyer\+Trame}}
+\index{envoyer\+Trame@{envoyer\+Trame}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{envoyer\+Trame()}{envoyerTrame()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+envoyer\+Trame (\begin{DoxyParamCaption}\item[{String}]{trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode qui envoie une trame au périphérique Bluetooth. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00242}{242} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_peripherique_8java_source_l00149}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+envoyer()}, et \hyperlink{_peripherique_8java_source_l00122}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+est\+Connecte()}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00438}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+demander\+Etats()}, et \hyperlink{_main_activity_8java_source_l00131}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Click()}.
+
+
+\begin{DoxyCode}
+00243     \{
+00244         \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth} != null)
+00245         \{
+00246             \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}())
+00247             \{
+00248                 Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"envoyerTrame() trame : "} + trame);
+00249                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a7f691381f5164b92f8ff3f06561db656}{envoyer}(trame);
+00250             \}
+00251         \}
+00252     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!initialiser\+Widgets@{initialiser\+Widgets}}
+\index{initialiser\+Widgets@{initialiser\+Widgets}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{initialiser\+Widgets()}{initialiserWidgets()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+initialiser\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode pour initialiser les Widgets. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00272}{272} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_main_activity_8java_source_l00307}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+renitialiser\+Vue()}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00059}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00273     \{
+00274         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{renitialiserVue}();
+00275 
+00276         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth}.setOnClickListener(\textcolor{keyword}{this});
+00277         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}{buttonRechercher}.setOnClickListener(\textcolor{keyword}{this});
+00278         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{buttonRafraichir}.setOnClickListener(\textcolor{keyword}{this});
+00279         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setOnClickListener(\textcolor{keyword}{this});
+00280         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setOnClickListener(\textcolor{keyword}{this});
+00281         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setOnClickListener(\textcolor{keyword}{this});
+00282     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Click@{on\+Click}}
+\index{on\+Click@{on\+Click}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Click()}{onClick()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Click (\begin{DoxyParamCaption}\item[{View}]{element }\end{DoxyParamCaption})}
+
+
+
+Méthode de gestion des clics Ceci est la méthode qui gère l\textquotesingle{}écoute des clics sur les différents widgets de l\textquotesingle{}interface. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em element} & element définis le widget sur lequel le clic est recenssé \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00131}{131} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_peripherique_8java_source_l00183}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+connecter()}, \hyperlink{_peripherique_8java_source_l00235}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+deconnecter()}, \hyperlink{_main_activity_8java_source_l00438}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+demander\+Etats()}, \hyperlink{_main_activity_8java_source_l00242}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+envoyer\+Trame()}, \hyperlink{_peripherique_8java_source_l00122}{com.\+lasalle.\+io\+\_\+trucks.\+Peripherique.\+est\+Connecte()}, \hyperlink{_main_activity_8java_source_l00403}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+handler}, \hyperlink{_communication_8java_source_l00109}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+rechercher\+Appareil\+Connu()}, et \hyperlink{_communication_8java_source_l00123}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+recuperer\+Appareil\+Bluetooth()}.
+
+
+\begin{DoxyCode}
+00132     \{
+00133         \textcolor{keywordflow}{if}(element == \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth})
+00134         \{
+00135             \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth}.getText().equals(\textcolor{stringliteral}{"Connecter"}))
+00136             \{
+00137                 BluetoothDevice blueDevice = \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communicationBluetooth}.
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a84ae8043b94d6f156a30f6f90dbbba4e}{recupererAppareilBluetooth}(\textcolor{stringliteral}{"io-trucks"});
+00138                 \textcolor{keywordflow}{if}(blueDevice == null)
+00139                 \{
+00140                     AlertDialog.Builder boiteAvertissementNonTrouver = \textcolor{keyword}{new} AlertDialog.Builder(\textcolor{keyword}{this});
+00141                     boiteAvertissementNonTrouver.setMessage(\textcolor{stringliteral}{"L'appareil io-trucks n'as pas été trouvé.
+       Vérifiez si celui a été appairé correctement."});
+00142                     boiteAvertissementNonTrouver.setPositiveButton(\textcolor{stringliteral}{"Continuer"}, \textcolor{keyword}{new} DialogInterface.
+      OnClickListener() \{
+00143                         @Override
+00144                         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a154e0d879d71bfbe95bc2d566517589d}{onClick}(DialogInterface dialog, \textcolor{keywordtype}{int} which) \{
+00145                         \}
+00146                     \});
+00147                     boiteAvertissementNonTrouver.show();
+00148                     Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"Appareil io-trucks non trouvé !"});
+00149                     \textcolor{keywordflow}{return};
+00150                 \}
+00151                 \textcolor{keywordflow}{else}
+00152                 \{
+00153                     \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth} == null)
+00154                     \{
+00155                         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"Instancie peripheriqueBluetooth"});
+00156                         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth} = \textcolor{keyword}{new} Peripherique(blueDevice, 
+      \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}{handler});
+00157                     \}
+00158                     \textcolor{keywordflow}{if}(!\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}())
+00159                     \{
+00160                         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"Connexion peripheriqueBluetooth"});
+00161                         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_ab2c35019f3ba71ec1b3b59470dc383ae}{connecter}();
+00162                     \}
+00163                     \textcolor{keywordflow}{else} \textcolor{comment}{// déjà connecté !}
+00164                     \{
+00165                     \}
+00166                 \}
+00167             \}
+00168             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth}.getText().equals(\textcolor{stringliteral}{"Déconnecter"}))
+00169             \{
+00170                 \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_a53878a13cdb7b3d8fa8e7c97cb0287f0}{estConnecte}())
+00171                 \{
+00172                     \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}{peripheriqueBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique_afe5345d0dc31b1af1b311278241e228d}{deconnecter}();
+00173                 \}
+00174             \}
+00175         \}
+00176         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}{buttonRechercher})
+00177         \{
+00178             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communicationBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_a5e754807ead5e695279657bea324b5d7}{rechercherAppareilConnu}(\textcolor{keyword}{
+      this});
+00179         \}
+00180         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle})
+00181         \{
+00182             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"button Triangle"});
+00183             \textcolor{keywordflow}{if}(!\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etatTriangle})
+00184             \{
+00185                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;T;1\(\backslash\)r\(\backslash\)n"});
+00186                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setImageResource(R.drawable.triangle);
+00187                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etatTriangle} = \textcolor{keyword}{true};
+00188             \}
+00189             \textcolor{keywordflow}{else}
+00190             \{
+00191                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;T;0\(\backslash\)r\(\backslash\)n"});
+00192                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setImageResource(R.drawable.triangle\_b\_w);
+00193                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}{etatTriangle} = \textcolor{keyword}{false};
+00194             \}
+00195         \}
+00196         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare})
+00197         \{
+00198             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"button Gyrophare"});
+00199             \textcolor{keywordflow}{if}(!\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etatGyrophare})
+00200             \{
+00201                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;G;1\(\backslash\)r\(\backslash\)n"});
+00202                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setImageResource(R.drawable.flash);
+00203                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etatGyrophare} = \textcolor{keyword}{true};
+00204             \}
+00205             \textcolor{keywordflow}{else}
+00206             \{
+00207                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;G;0\(\backslash\)r\(\backslash\)n"});
+00208                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setImageResource(R.drawable.flash\_b\_w);
+00209                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}{etatGyrophare} = \textcolor{keyword}{false};
+00210             \}
+00211         \}
+00212         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage})
+00213         \{
+00214             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"button Eclairage"});
+00215             \textcolor{keywordflow}{if}(!\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etatEclairage})
+00216             \{
+00217                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;E;1\(\backslash\)r\(\backslash\)n"});
+00218                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setImageResource(R.drawable.spotlight);
+00219                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etatEclairage} = \textcolor{keyword}{true};
+00220             \}
+00221             \textcolor{keywordflow}{else}
+00222             \{
+00223                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_af120db4bf132a5e3544a9e6722839a5e}{envoyerTrame}(\textcolor{stringliteral}{"$iotruck;E;0\(\backslash\)r\(\backslash\)n"});
+00224                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setImageResource(R.drawable.spotlight\_b\_w);
+00225                 \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}{etatEclairage} = \textcolor{keyword}{false};
+00226             \}
+00227         \}
+00228         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(element == \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{buttonRafraichir})
+00229         \{
+00230             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"button Rafraichir"});
+00231             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{demanderEtats}();
+00232         \}
+00233         \textcolor{keywordflow}{else}
+00234         \{
+00235             Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"button Inconnu : "} + element.getId());
+00236         \}
+00237     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Create@{on\+Create}}
+\index{on\+Create@{on\+Create}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Create()}{onCreate()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Create (\begin{DoxyParamCaption}\item[{Bundle}]{saved\+Instance\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée à la création de l\textquotesingle{}activité \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity}{Main\+Activity}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em saved\+Instance\+State} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00059}{59} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_communication_8java_source_l00043}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+demander\+Activation\+Bluetooth()}, \hyperlink{_main_activity_8java_source_l00272}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+initialiser\+Widgets()}, et \hyperlink{_main_activity_8java_source_l00257}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+recuperer\+Widgets()}.
+
+
+\begin{DoxyCode}
+00060     \{
+00061         super.onCreate(savedInstanceState);
+00062         setContentView(R.layout.activity\_main);
+00063         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"onCreate()"});
+00064 
+00065         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}{recupererWidgets}();
+00066         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6c15e67f7d99f62d1e40de710216a1d7}{initialiserWidgets}();
+00067 
+00068         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communicationBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_aba4889871694f97fb1897f9a5b0979f4}{demanderActivationBluetooth}
+      (\textcolor{keyword}{this});
+00069     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a41e9b1eab2362456217786165b87d25e}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a41e9b1eab2362456217786165b87d25e}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Destroy@{on\+Destroy}}
+\index{on\+Destroy@{on\+Destroy}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Destroy()}{onDestroy()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée à la destruction de l\textquotesingle{}application (après \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop()} et détruite par le système Android) 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00118}{118} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+\begin{DoxyCode}
+00119     \{
+00120         super.onDestroy();
+00121         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"onDestroy()"});
+00122 
+00123     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Pause@{on\+Pause}}
+\index{on\+Pause@{on\+Pause}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Pause()}{onPause()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée après qu\textquotesingle{}une boîte de dialogue s\textquotesingle{}est affichée (on reprend sur un \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}{on\+Resume()}) ou avant \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop()} (activité plus visible) 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00096}{96} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_communication_8java_source_l00141}{com.\+lasalle.\+io\+\_\+trucks.\+Communication.\+unregister\+Bluetooth()}.
+
+
+\begin{DoxyCode}
+00097     \{
+00098         super.onPause();
+00099         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"onPause()"});
+00100         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}{communicationBluetooth}.\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication_ad5df5cc22c05d1a2af2b2c0adde57dea}{unregisterBluetooth}(\textcolor{keyword}{this});
+00101     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_adc08807b3af20598d330f394acf55ecb}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Resume@{on\+Resume}}
+\index{on\+Resume@{on\+Resume}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Resume()}{onResume()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée après \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}{on\+Start()} ou après \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a3d9481fd69693e777afbbfba5ddb0132}{on\+Pause()} 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00085}{85} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_main_activity_8java_source_l00287}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+creer\+Liason\+Receiver\+Etat\+Bluetooth()}.
+
+
+\begin{DoxyCode}
+00086     \{
+00087         super.onResume();
+00088         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"onResume()"});
+00089         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a14d1db05fdfec7536d6b7c9809e360a0}{creerLiasonReceiverEtatBluetooth}();
+00090     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a88715b4d1f7b33b3871849de4c667abf}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Start@{on\+Start}}
+\index{on\+Start@{on\+Start}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Start()}{onStart()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée au démarrage après le \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a236d8585ed546ef42c0d2dfd3268893a}{on\+Create()} ou un restart après un \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}{on\+Stop()} 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00075}{75} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+\begin{DoxyCode}
+00076     \{
+00077         super.onStart();
+00078         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"onStart()"});
+00079     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a6fbad98934d4b04260faff49da3d52ad}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!on\+Stop@{on\+Stop}}
+\index{on\+Stop@{on\+Stop}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{on\+Stop()}{onStop()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée lorsque l\textquotesingle{}activité n\textquotesingle{}est plus visible. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00107}{107} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+\begin{DoxyCode}
+00108     \{
+00109         super.onStop();
+00110         Log.i(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG},\textcolor{stringliteral}{"onStop()"});
+00111 
+00112     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a36109f04e626f0bf4c1a73da14c4fb2b}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!recuperer\+Widgets@{recuperer\+Widgets}}
+\index{recuperer\+Widgets@{recuperer\+Widgets}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{recuperer\+Widgets()}{recupererWidgets()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+recuperer\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode pour associer la vue à l\textquotesingle{}objet des Widgets. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00257}{257} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00059}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00258     \{
+00259         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth} = findViewById(R.id.buttonConnecter);
+00260         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}{buttonRechercher} = findViewById(R.id.buttonBounded);
+00261         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{buttonRafraichir} = findViewById(R.id.buttonRafraichir);
+00262         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle} = findViewById(R.id.imageButtonTriangle);
+00263         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare} = findViewById(R.id.imageButtonGyrophares);
+00264         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage} = findViewById(R.id.imageButtonEclairage);
+00265         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}{imageEtatConnection} = findViewById(R.id.imageViewEtatConnection);
+00266         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}{textEtatConnection} = findViewById(R.id.textViewEtatConnection);
+00267     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!renitialiser\+Vue@{renitialiser\+Vue}}
+\index{renitialiser\+Vue@{renitialiser\+Vue}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{renitialiser\+Vue()}{renitialiserVue()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+renitialiser\+Vue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode permettant de rénitialiser la vue de l\textquotesingle{}activitée. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00307}{307} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00272}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+initialiser\+Widgets()}.
+
+
+\begin{DoxyCode}
+00308     \{
+00309         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}{buttonBluetooth}.setText(\textcolor{stringliteral}{"Connecter"});
+00310         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}{buttonRafraichir}.setEnabled(\textcolor{keyword}{false});
+00311         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setEnabled(\textcolor{keyword}{false});
+00312         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setEnabled(\textcolor{keyword}{false});
+00313         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setEnabled(\textcolor{keyword}{false});
+00314         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}{imageButtonTriangle}.setImageResource(R.drawable.triangle\_b\_w);
+00315         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}{imageButtonEclairage}.setImageResource(R.drawable.spotlight\_b\_w);
+00316         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}{imageButtonGyrophare}.setImageResource(R.drawable.flash\_b\_w);
+00317         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}{imageEtatConnection}.setImageResource(R.drawable.red\_circle);
+00318         \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}{textEtatConnection}.setText(\textcolor{stringliteral}{"Déconnecter"});
+00319     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2088afcfce1e8adcf35fe6b79d63887a}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!traiter\+Trame@{traiter\+Trame}}
+\index{traiter\+Trame@{traiter\+Trame}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{traiter\+Trame()}{traiterTrame()}}
+{\footnotesize\ttfamily void com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+traiter\+Trame (\begin{DoxyParamCaption}\item[{String \mbox{[}$\,$\mbox{]}}]{trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Méthode permettant de traiter les trames en fonctions de leurs contennue. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em trame} & contient la trame reçu après avoir était décoder et découper \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000001}{A faire}]Traiter les autres types de trames \end{DoxyRefDesc}
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00348}{348} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Références \hyperlink{_main_activity_8java_source_l00360}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+afficher\+Etat\+S1()}, et \hyperlink{_protocole_8java_source_l00025}{com.\+lasalle.\+io\+\_\+trucks.\+Protocole.\+T\+R\+A\+M\+E\+\_\+\+R\+E\+Q\+U\+E\+T\+E\+\_\+\+S\+T\+A\+T\+E1}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00325}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+decoder\+Trame()}.
+
+
+\begin{DoxyCode}
+00349     \{
+00350         Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"traiterTrame() trame[1] = "} + trame[1] + \textcolor{stringliteral}{" (type)"});
+00351         \textcolor{keywordflow}{if}(trame[1].equals(Protocole.TRAME\_REQUETE\_STATE1))
+00352         \{
+00353             \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac820f476b430c74a1201d9a906fd8429}{afficherEtatS1}(trame);
+00354         \}
+00358     \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a2197b0145db353437c41d1fc57f28650}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!button\+Bluetooth@{button\+Bluetooth}}
+\index{button\+Bluetooth@{button\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{button\+Bluetooth}{buttonBluetooth}}
+{\footnotesize\ttfamily Button com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+button\+Bluetooth\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00043}{43} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac138932ce8d8dd12d7eb35496a1c9a16}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!button\+Rafraichir@{button\+Rafraichir}}
+\index{button\+Rafraichir@{button\+Rafraichir}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{button\+Rafraichir}{buttonRafraichir}}
+{\footnotesize\ttfamily Button com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+button\+Rafraichir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00045}{45} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a74b2f440caeb7d27d9bd62d87f106156}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!button\+Rechercher@{button\+Rechercher}}
+\index{button\+Rechercher@{button\+Rechercher}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{button\+Rechercher}{buttonRechercher}}
+{\footnotesize\ttfamily Button com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+button\+Rechercher\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00044}{44} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aef1818afc9c0d071330ccc244e4b3794}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!communication\+Bluetooth@{communication\+Bluetooth}}
+\index{communication\+Bluetooth@{communication\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{communication\+Bluetooth}{communicationBluetooth}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication} com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+communication\+Bluetooth = new \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_communication}{Communication}()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00049}{49} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a345177f9fe1d73a402a57ce992a5aa1a}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!etat\+Eclairage@{etat\+Eclairage}}
+\index{etat\+Eclairage@{etat\+Eclairage}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{etat\+Eclairage}{etatEclairage}}
+{\footnotesize\ttfamily Boolean com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+etat\+Eclairage = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00042}{42} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac19484cc818434d89d35933a8cbb2b63}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!etat\+Gyrophare@{etat\+Gyrophare}}
+\index{etat\+Gyrophare@{etat\+Gyrophare}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{etat\+Gyrophare}{etatGyrophare}}
+{\footnotesize\ttfamily Boolean com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+etat\+Gyrophare = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00041}{41} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a25509a0ae84110cdb8957c51b149213f}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!etat\+Triangle@{etat\+Triangle}}
+\index{etat\+Triangle@{etat\+Triangle}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{etat\+Triangle}{etatTriangle}}
+{\footnotesize\ttfamily Boolean com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+etat\+Triangle = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Attributs 
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00040}{40} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a16435e06fc13fa3938f40a1bd5e1eb0b}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!handler@{handler}}
+\index{handler@{handler}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{handler}{handler}}
+{\footnotesize\ttfamily final Handler com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+handler\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} Handler()
+    \{
+        @Override
+        \textcolor{keyword}{public} \textcolor{keywordtype}{void} handleMessage(Message msg)
+        \{
+            super.handleMessage(msg);
+
+            \textcolor{keywordflow}{switch}(msg.what)
+            \{
+                \textcolor{keywordflow}{case} Peripherique.CODE\_CONNEXION:
+                    Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"handleMessage() io-trucks connecté"});
+                    \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a09f9deded45d212d479d2206ddf52749}{activerVue}();
+                    \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9cd705ec555f1a41d39172ad2e9fb61}{demanderEtats}();
+                    \textcolor{keywordflow}{break};
+                \textcolor{keywordflow}{case} Peripherique.CODE\_RECEPTION:
+                    Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"handleMessage() io-trucks réception : "} + (String)msg.obj);
+                    \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_afee6fb53a4414e7b577ea329fd473ba4}{decoderTrame}((String)msg.obj);
+                    \textcolor{keywordflow}{break};
+                \textcolor{keywordflow}{case} Peripherique.CODE\_EMISSION:
+                    Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"handleMessage() io-trucks émission : "} + (String)msg.obj);
+                    
+                    \textcolor{keywordflow}{break};
+                \textcolor{keywordflow}{case} Peripherique.CODE\_DECONNEXION:
+                    Log.v(\hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}{TAG}, \textcolor{stringliteral}{"handleMessage() io-trucks déconnecté"});
+                    \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_ac4c0bdaf761a42e924c6cf9d1b9a0e23}{renitialiserVue}();
+                    \textcolor{keywordflow}{break};
+            \}
+        \}
+    \}
+\end{DoxyCode}
+
+
+Handler de l\textquotesingle{}application et des périphériques bluetooth Cette handler permet de gérer le thread de communication de l\textquotesingle{}application. 
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00403}{403} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+Référencé par \hyperlink{_main_activity_8java_source_l00131}{com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+on\+Click()}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a1cc3f48aebca6c187b2a964fa6f569fc}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!image\+Button\+Eclairage@{image\+Button\+Eclairage}}
+\index{image\+Button\+Eclairage@{image\+Button\+Eclairage}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{image\+Button\+Eclairage}{imageButtonEclairage}}
+{\footnotesize\ttfamily Image\+Button com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+image\+Button\+Eclairage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00048}{48} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aed3dc707e8acf48e821ebda3312a0dca}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!image\+Button\+Gyrophare@{image\+Button\+Gyrophare}}
+\index{image\+Button\+Gyrophare@{image\+Button\+Gyrophare}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{image\+Button\+Gyrophare}{imageButtonGyrophare}}
+{\footnotesize\ttfamily Image\+Button com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+image\+Button\+Gyrophare\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00047}{47} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_abe65c5762df1b63ee18b51fcb1bb23c8}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!image\+Button\+Triangle@{image\+Button\+Triangle}}
+\index{image\+Button\+Triangle@{image\+Button\+Triangle}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{image\+Button\+Triangle}{imageButtonTriangle}}
+{\footnotesize\ttfamily Image\+Button com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+image\+Button\+Triangle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00046}{46} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_aa9d2b0a05a522c372879d3c35294d7bc}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!image\+Etat\+Connection@{image\+Etat\+Connection}}
+\index{image\+Etat\+Connection@{image\+Etat\+Connection}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{image\+Etat\+Connection}{imageEtatConnection}}
+{\footnotesize\ttfamily Image\+View com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+image\+Etat\+Connection\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00051}{51} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a0c0b8e9294fa6c74c52886cb50687f18}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!peripherique\+Bluetooth@{peripherique\+Bluetooth}}
+\index{peripherique\+Bluetooth@{peripherique\+Bluetooth}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{peripherique\+Bluetooth}{peripheriqueBluetooth}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1lasalle_1_1io__trucks_1_1_peripherique}{Peripherique} com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+peripherique\+Bluetooth = null\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00050}{50} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a37b90dba972711328e3f4c83c55eb0fc}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!T\+AG@{T\+AG}}
+\index{T\+AG@{T\+AG}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{T\+AG}{TAG}}
+{\footnotesize\ttfamily final String com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+T\+AG = \char`\"{}I\+H\+M\+Main\+Activity\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Constantes 
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00036}{36} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}\label{classcom_1_1lasalle_1_1io__trucks_1_1_main_activity_a62ce189c543dda03ed48e00c10623677}} 
+\index{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}!text\+Etat\+Connection@{text\+Etat\+Connection}}
+\index{text\+Etat\+Connection@{text\+Etat\+Connection}!com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity@{com\+::lasalle\+::io\+\_\+trucks\+::\+Main\+Activity}}
+\paragraph{\texorpdfstring{text\+Etat\+Connection}{textEtatConnection}}
+{\footnotesize\ttfamily Text\+View com.\+lasalle.\+io\+\_\+trucks.\+Main\+Activity.\+text\+Etat\+Connection\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_main_activity_8java_source_l00052}{52} du fichier \hyperlink{_main_activity_8java_source}{Main\+Activity.\+java}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_main_activity_8java}{Main\+Activity.\+java}\end{DoxyCompactItemize}
